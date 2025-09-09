@@ -1,3 +1,4 @@
+import { Button } from '@openedx/paragon';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -6,16 +7,17 @@ const SidebarTriggerBase = ({
   ariaLabel,
   children,
 }) => (
-  <button
-    className="border border-light-400 bg-transparent align-items-center align-content-center d-flex notification-btn"
-    type="button"
+  <Button
+    className="trigger-base-btn d-flex align-items-center justify-content-center"
+    variant='link'
     onClick={onClick}
     aria-label={ariaLabel}
   >
-    <div className="icon-container d-flex position-relative align-items-center">
+    <div className="icon-container d-flex position-relative align-items-center justify-content-center">
       {children}
     </div>
-  </button>
+  </Button>
+
 );
 
 SidebarTriggerBase.propTypes = {

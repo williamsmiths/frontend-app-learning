@@ -30,25 +30,27 @@ const SidebarSection = ({ section, handleSelectSection }) => {
         {title}
         <span className="sr-only">
           , {intl.formatMessage(complete
-          ? courseOutlineMessages.completedSection
-          : courseOutlineMessages.incompleteSection)}
+            ? courseOutlineMessages.completedSection
+            : courseOutlineMessages.incompleteSection)}
         </span>
       </div>
     </>
   );
 
   return (
-    <li className="mb-2 course-sidebar-section">
+    <li
+      className={classNames(
+        'course-sidebar-section',
+        { 'bg-gray-100': isActiveSection },
+      )}
+    >
       <Button
         variant="tertiary"
-        className={classNames(
-          'd-flex align-items-center w-100 px-4 py-3.5 rounded-0 justify-content-start',
-          { 'bg-info-100': isActiveSection },
-        )}
+        className="sidebar-button"
         onClick={() => handleSelectSection(id)}
       >
         {sectionTitle}
-        <Icon src={ChevronRightIcon} />
+        <Icon src={ChevronRightIcon} className='text-primary-red'/>
       </Button>
     </li>
   );

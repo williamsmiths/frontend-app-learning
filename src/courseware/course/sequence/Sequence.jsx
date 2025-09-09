@@ -161,7 +161,7 @@ const Sequence = ({
 
   const defaultContent = (
     <>
-      <div className="sequence-container d-inline-flex flex-row w-100">
+      <div className="sequence-container d-inline-flex flex-row w-100" >
         <CourseOutlineSidebarTriggerSlot
           sectionId={section ? section.id : null}
           sequenceId={sequenceId}
@@ -169,7 +169,7 @@ const Sequence = ({
           unitId={unitId}
         />
         <CourseOutlineSidebarSlot />
-        <div className="sequence w-100">
+        <div className="sequence w-100 shadow-sm">
           {!isEnabledOutlineSidebar && (
             <div className="sequence-navigation-container">
               <SequenceNavigation
@@ -196,16 +196,18 @@ const Sequence = ({
           )}
 
           <div className="unit-container flex-grow-1 pt-4">
-            <SequenceContent
-              courseId={courseId}
-              gated={gated}
-              sequenceId={sequenceId}
-              unitId={unitId}
-              unitLoadedHandler={handleUnitLoaded}
-              isOriginalUserStaff={originalUserIsStaff}
-              isEnabledOutlineSidebar={isEnabledOutlineSidebar}
-              renderUnitNavigation={renderUnitNavigation}
-            />
+            <div style={{ minHeight: '400px' }}>
+              <SequenceContent
+                courseId={courseId}
+                gated={gated}
+                sequenceId={sequenceId}
+                unitId={unitId}
+                unitLoadedHandler={handleUnitLoaded}
+                isOriginalUserStaff={originalUserIsStaff}
+                isEnabledOutlineSidebar={isEnabledOutlineSidebar}
+                renderUnitNavigation={renderUnitNavigation}
+              />
+            </div>
             {unitHasLoaded && renderUnitNavigation(false)}
           </div>
         </div>

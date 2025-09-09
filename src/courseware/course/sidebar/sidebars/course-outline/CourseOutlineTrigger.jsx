@@ -26,14 +26,15 @@ const CourseOutlineTrigger = ({ isMobileView }) => {
   }
 
   return (
-    <div className={classNames('outline-sidebar-heading-wrapper bg-light-200 collapsed align-self-start', {
+    <div className={classNames('outline-sidebar-heading-wrapper bg-light-200 collapsed align-self-start rounded-sm', {
       'flex-shrink-0 mr-4 p-2.5': isDisplayForDesktopView,
-      'p-0': isDisplayForMobileView,
+      'p-2': isDisplayForMobileView,
     })}
     >
       <IconButton
         alt={intl.formatMessage(messages.toggleCourseOutlineTrigger)}
-        className="outline-sidebar-toggle-btn flex-shrink-0 text-dark bg-light-200 rounded-0"
+        className="custom-dropdown-toggle"
+        variant="light"
         iconAs={MenuOpenIcon}
         onClick={handleToggleCollapse}
       />

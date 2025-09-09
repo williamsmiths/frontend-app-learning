@@ -44,9 +44,18 @@ $gray-100: #F3F4F6;
 .bg-primary-blue {
   background-color: $primary-blue !important;
 }
+.border-primary-red{
+  .trigger-base-btn{
+    color: $primary-red !important;
+  }
+}
+
+.custom-navigation-btn{
+}
 
 .custom-explore-btn {
   background-color: $primary-red !important;
+  transition: all 0.25s ease;
   color: #fff !important;
   border-radius: 30px !important;
   padding: 8px 24px !important;
@@ -70,6 +79,7 @@ $gray-100: #F3F4F6;
 }
 
 .custom-outline-btn {
+  transition: all 0.25s ease;
   background-color: #fff !important;
   border: 1px solid $primary-red !important;
   color: $primary-red !important;
@@ -93,17 +103,19 @@ $gray-100: #F3F4F6;
   color: #fff !important;
 }
 
-.collapsible-trigger{
+.collapsible-trigger {
   background-color: $gray-100 !important;
 }
 
 .custom-dropdown-toggle {
+  transition: all 0.25s ease;
   color: $primary-red !important;
   border: none !important;
   outline: none !important;
   width: 32px !important;
   height: 32px !important;
 }
+
 .custom-dropdown-toggle:hover,
 .custom-dropdown-toggle:focus {
   background: $primary-red !important;

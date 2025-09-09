@@ -81,8 +81,12 @@ const UnitNavigation = ({
       'top-unit-navigation': isAtTop,
     })}
     >
-      {renderPreviousButton()}
-      {renderNextButton()}
+      <div className='mr-2'>
+        {renderPreviousButton()}
+      </div>
+      <div>
+        {renderNextButton()}
+      </div>
     </div>
   );
 };

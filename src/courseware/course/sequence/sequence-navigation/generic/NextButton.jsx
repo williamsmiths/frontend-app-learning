@@ -60,7 +60,7 @@ const NextButton = ({
   return (
     <Button
       variant={variant}
-      className={buttonStyle}
+      className={`${buttonStyle} custom-outline-btn`}
       disabled={disabled}
       onClick={onClickHandler}
       as={disabled ? undefined : Link}

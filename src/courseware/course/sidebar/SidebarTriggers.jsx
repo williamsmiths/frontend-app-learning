@@ -11,7 +11,8 @@ const SidebarTriggers = () => {
   } = useContext(SidebarContext);
 
   const isMobileView = useWindowSize().width < breakpoints.small.minWidth;
-
+  console.log('SIDEBAR_ORDER', SIDEBAR_ORDER);
+  
   return (
     <div className="d-flex ml-auto">
       {SIDEBAR_ORDER.map((sidebarId) => {
@@ -19,8 +20,8 @@ const SidebarTriggers = () => {
         const isActive = sidebarId === currentSidebar;
         return (
           <div
-            className={classNames({ 'ml-1': !isMobileView, 'border-primary-700 sidebar-active': isActive })}
-            style={{ borderBottom: '2px solid', borderColor: isActive ? 'inherit' : 'transparent' }}
+            className={classNames({ 'ml-1': !isMobileView, 'border-primary-red sidebar-active': isActive })}
+            // style={{ borderBottom: '2px solid', borderColor: isActive ? 'inherit' : 'transparent' }}
             key={sidebarId}
           >
             <Trigger onClick={() => toggleSidebar(sidebarId)} key={sidebarId} />

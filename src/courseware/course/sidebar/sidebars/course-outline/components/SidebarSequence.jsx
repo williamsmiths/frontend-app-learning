@@ -2,8 +2,8 @@ import { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useIntl } from '@edx/frontend-platform/i18n';
-import { Collapsible } from '@openedx/paragon';
-
+import { Collapsible, IconButton } from '@openedx/paragon';
+import { Minus, Plus } from '@openedx/paragon/icons';
 import courseOutlineMessages from '@src/course-home/outline-tab/messages';
 import { useCourseOutlineSidebar } from '../hooks';
 import CompletionIcon from './CompletionIcon';
@@ -41,21 +41,41 @@ const SidebarSequence = ({
         {specialExamInfo && <span className="align-middle small text-muted">{specialExamInfo}</span>}
         <span className="sr-only">
           , {intl.formatMessage(complete
-          ? courseOutlineMessages.completedAssignment
-          : courseOutlineMessages.incompleteAssignment)}
+            ? courseOutlineMessages.completedAssignment
+            : courseOutlineMessages.incompleteAssignment)}
         </span>
       </div>
     </>
   );
 
   return (
-    <li>
+    <li className={classNames('course-sidebar-collapsible', { 'active-section': isActiveSequence, 'bg-info-100': isActiveSequence && !open })}>
       <Collapsible
-        className={classNames('mb-2', { 'active-section': isActiveSequence, 'bg-info-100': isActiveSequence && !open })}
+        className="border-0"
         styling="card-lg text-break"
         title={sectionTitle}
         open={open}
         onToggle={() => setOpen(!open)}
+        iconWhenClosed={(
+          <IconButton
+            alt={"Mở"}
+            iconAs={Plus}
+            onClick={() => { setOpen(true); }}
+            size="sm"
+            variant="light"
+            className='custom-dropdown-toggle'
+          />
+        )}
+        iconWhenOpen={(
+          <IconButton
+            alt={"Đóng"}
+            iconAs={Minus}
+            onClick={() => { setOpen(false); }}
+            size="sm"
+            variant="light"
+            className='custom-dropdown-toggle'
+          />
+        )}
       >
         <ol className="list-unstyled">
           {unitIds.map((unitId, index) => (

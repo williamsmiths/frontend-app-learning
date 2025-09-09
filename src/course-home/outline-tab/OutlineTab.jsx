@@ -155,7 +155,7 @@ const OutlineTab = () => {
               <UpgradeToShiftDatesAlert model="outline" logUpgradeLinkClick={logUpgradeToShiftDatesLinkClick} />
             </>
           )}
-          <StartOrResumeCourseCard />
+          {/* <StartOrResumeCourseCard /> */}
           <WelcomeMessage courseId={courseId} nextElementRef={expandButtonRef} />
           {rootCourseId && (
             <>

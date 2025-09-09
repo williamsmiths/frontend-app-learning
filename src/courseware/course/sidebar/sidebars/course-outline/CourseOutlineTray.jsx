@@ -54,7 +54,7 @@ const CourseOutlineTray = () => {
   };
 
   const sidebarHeading = (
-    <div className="outline-sidebar-heading-wrapper sticky d-flex justify-content-between align-self-start align-items-center bg-light-200 p-2.5 pl-4">
+    <div className="outline-sidebar-heading-wrapper sticky d-flex justify-content-between align-self-start align-items-center bg-light-200 p-2 pl-4">
       {isDisplaySequenceLevel && backButtonTitle ? (
         <Button
           variant="link"
@@ -71,7 +71,8 @@ const CourseOutlineTray = () => {
       )}
       <IconButton
         alt={intl.formatMessage(messages.toggleCourseOutlineTrigger)}
-        className="outline-sidebar-toggle-btn flex-shrink-0 text-dark bg-light-200"
+        className="custom-dropdown-toggle my-2"
+        variant="light"
         iconAs={MenuOpenIcon}
         onClick={handleToggleCollapse}
       />
@@ -98,7 +99,7 @@ const CourseOutlineTray = () => {
       </div>
     );
   }
-
+  
   return (
     <div className={classNames('outline-sidebar-wrapper', {
       'flex-shrink-0 mr-4 h-auto': !shouldDisplayFullScreen,

@@ -73,7 +73,7 @@ const SidebarBase = ({
                     size="sm"
                     iconAs={Icon}
                     onClick={() => toggleSidebar(null)}
-                    variant="primary"
+                    className='trigger-base-btn'
                     alt={intl.formatMessage(messages.closeNotificationTrigger)}
                   />
                 </div>
