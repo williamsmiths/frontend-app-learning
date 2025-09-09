@@ -25,9 +25,9 @@ const CourseDates = () => {
   if (courseDateBlocks.length === 0) {
     return null;
   }
-
+  
   return (
-    <section className="mb-4">
+    <section className="mb-4 order border-secondary-subtle rounded p-3 shadow">
       <div id="courseHome-dates">
         <h2 className="h4">{intl.formatMessage(messages.dates)}</h2>
         <ol className="list-unstyled">

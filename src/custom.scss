@@ -1,0 +1,111 @@
+$primary: #d32f2f;
+$primary-red: #d32f2f;
+$primary-red-dark: #b71c1c;
+$primary-red-light: #ffcdd2;
+$primary-blue: #0065FD;
+$gray-100: #F3F4F6;
+
+.text-primary {
+  color: $primary !important;
+}
+
+.text-primary-red {
+  color: $primary-red !important;
+}
+
+.text-primary-red-dark {
+  color: $primary-red-dark !important;
+}
+
+.text-primary-red-light {
+  color: $primary-red-light !important;
+}
+
+.text-primary-blue {
+  color: $primary-blue !important;
+}
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-primary-red {
+  background-color: $primary-red !important;
+}
+
+.bg-primary-red-dark {
+  background-color: $primary-red-dark !important;
+}
+
+.bg-primary-red-light {
+  background-color: $primary-red-light !important;
+}
+
+.bg-primary-blue {
+  background-color: $primary-blue !important;
+}
+
+.custom-explore-btn {
+  background-color: $primary-red !important;
+  color: #fff !important;
+  border-radius: 30px !important;
+  padding: 8px 24px !important;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  text-decoration: none !important;
+
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+
+  }
+}
+
+.custom-explore-btn:hover {
+  background-color: $primary-red-dark !important;
+}
+
+.custom-outline-btn {
+  background-color: #fff !important;
+  border: 1px solid $primary-red !important;
+  color: $primary-red !important;
+  padding: 8px 24px !important;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+
+  }
+}
+
+.custom-outline-btn:hover {
+  background-color: $primary-red !important;
+  color: #fff !important;
+}
+
+.collapsible-trigger{
+  background-color: $gray-100 !important;
+}
+
+.custom-dropdown-toggle {
+  color: $primary-red !important;
+  border: none !important;
+  outline: none !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+.custom-dropdown-toggle:hover,
+.custom-dropdown-toggle:focus {
+  background: $primary-red !important;
+  color: #fff !important;
+}

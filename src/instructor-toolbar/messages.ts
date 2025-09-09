@@ -3,7 +3,7 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   titleViewCourseIn: {
     id: 'instructor.toolbar.view.course',
-    defaultMessage: 'View course in:',
+    defaultMessage: 'Xem khóa học trong:',
     description: 'Button to view the course in the studio',
   },
   titleStudio: {

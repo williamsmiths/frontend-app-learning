@@ -49,13 +49,14 @@ const WelcomeMessage = ({ courseId, nextElementRef }) => {
       variant="light"
       stacked
       dismissible
+      closeLabel="Đóng"
       show={display}
       onClose={() => {
         nextElementRef.current?.focus();
         setDisplay(false);
         dispatch(dismissWelcomeMessage(courseId));
       }}
-      className="raised-card"
+      className="raised-card shadow"
       actions={messageCanBeShortened ? [
         <Button
           onClick={() => {
@@ -66,6 +67,7 @@ const WelcomeMessage = ({ courseId, nextElementRef }) => {
             setShowShortMessage(!showShortMessage);
           }}
           variant="outline-primary"
+          className='custom-outline-btn'
         >
           {showShortMessage ? intl.formatMessage(messages.welcomeMessageShowMoreButton)
             : intl.formatMessage(messages.welcomeMessageShowLessButton)}

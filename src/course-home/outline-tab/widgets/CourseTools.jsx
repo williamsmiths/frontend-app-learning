@@ -63,7 +63,7 @@ const CourseTools = () => {
   };
 
   return (
-    <section className="mb-4">
+    <section className="mb-4 order border-secondary-subtle rounded p-3 shadow" >
       <h2 className="h4">{intl.formatMessage(messages.tools)}</h2>
       <ul className="list-unstyled">
         {courseTools.map((courseTool) => (

@@ -8,6 +8,17 @@ const CourseEndAlert = React.lazy(() => import('./CourseEndAlert'));
 // period of time (in ms) before end of course during which we alert
 const WARNING_PERIOD_MS = 14 * 24 * 60 * 60 * 1000; // 14 days
 
+export function useFormatDate() {
+  return (date) => {
+    if (!date) return '';
+    const d = new Date(date);
+    return new Intl.DateTimeFormat('vi-VN', {
+      year: 'numeric', month: '2-digit', day: '2-digit'
+    }).format(d);
+  };
+};
+
+
 export function useCourseEndAlert(courseId) {
   const {
     isEnrolled,

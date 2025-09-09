@@ -27,6 +27,7 @@ import WelcomeMessage from './widgets/WelcomeMessage';
 import ProctoringInfoPanel from './widgets/ProctoringInfoPanel';
 import AccountActivationAlert from '../../alerts/logistration-alert/AccountActivationAlert';
 import CourseHomeSectionOutlineSlot from '../../plugin-slots/CourseHomeSectionOutlineSlot';
+import ButtonResumeCourse from './widgets/ButtonResumeCourse';
 
 const OutlineTab = () => {
   const intl = useIntl();
@@ -58,7 +59,7 @@ const OutlineTab = () => {
     enableProctoredExams,
   } = useModel('outline', courseId);
 
-  const [expandAll, setExpandAll] = useState(false);
+  const [expandAll, setExpandAll] = useState(true);
   const navigate = useNavigate();
 
   const eventProperties = {
@@ -119,8 +120,12 @@ const OutlineTab = () => {
   return (
     <>
       <div data-learner-type={learnerType} className="row w-100 mx-0 my-3 justify-content-between">
-        <div className="col-12 col-sm-auto p-0">
-          <div role="heading" aria-level="1" className="h2">{title}</div>
+        <div className="col-12 col-md-8 p-0">
+          <div role="heading" aria-level="1" className="w-100 d-flex align-items-center mb-3 justify-content-between">
+            <div className='h2'>{title}</div>
+            <ButtonResumeCourse />
+          </div>
+
         </div>
       </div>
       <div className="row course-outline-tab">
@@ -155,10 +160,17 @@ const OutlineTab = () => {
           {rootCourseId && (
             <>
               <div id="expand-button-row" className="row w-100 m-0 mb-3 justify-content-end">
-                <div className="col-12 col-md-auto p-0">
-                  <Button ref={expandButtonRef} variant="outline-primary" block onClick={() => { setExpandAll(!expandAll); }}>
-                    {expandAll ? intl.formatMessage(messages.collapseAll) : intl.formatMessage(messages.expandAll)}
-                  </Button>
+                <div className="col-12 p-0 mt-4 mb-1">
+                  <div className='d-flex justify-content-between align-items-center'>
+                    <div className='text-secondary-subtle'>
+                      Thông tin về khoá học
+                    </div>
+                    <div>
+                      <Button ref={expandButtonRef} variant="light" className='custom-outline-btn' block onClick={() => { setExpandAll(!expandAll); }}>
+                        {expandAll ? intl.formatMessage(messages.collapseAll) : intl.formatMessage(messages.expandAll)}
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <CourseHomeSectionOutlineSlot

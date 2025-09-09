@@ -22,6 +22,8 @@ const AlertList = ({
     <div className={className}>
       {topicMessages.map(message => {
         const AlertComponent = getAlertComponent(message.code);
+        console.log('AlertComponent', topicMessages);
+        
         return (
           <Suspense key={message.id} fallback={null}>
             <AlertComponent

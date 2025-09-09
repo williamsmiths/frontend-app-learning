@@ -1,11 +1,16 @@
+
+@import "../custom.scss";
+
 .course-tabs-navigation {
   position: relative;
-  border-bottom: solid 1px #eaeaea;
-
+  background-color: $gray-100;
   .nav a,
   .nav button {
+    padding: 10px;
+    margin: 5px;
     &:hover {
-      background-color: $light-400;
+      color: $primary;
+      background-color: $gray-100 !important;
     }
   }
 

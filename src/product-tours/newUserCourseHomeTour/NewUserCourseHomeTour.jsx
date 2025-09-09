@@ -9,39 +9,39 @@ import {
 const datesCheckpoint = {
   body: <FormattedMessage
     id="tours.datesCheckpoint.body"
-    defaultMessage="Important dates can help you stay on track."
+    defaultMessage="Các mốc thời gian quan trọng giúp bạn duy trì tiến độ."
   />,
   placement: 'left',
   target: '#courseHome-dates',
   title: <FormattedMessage
     id="tours.datesCheckpoint.title"
-    defaultMessage="Keep on top of key dates"
+    defaultMessage="Nắm bắt các ngày quan trọng"
   />,
 };
 
 const outlineCheckpoint = {
   body: <FormattedMessage
     id="tours.outlineCheckpoint.body"
-    defaultMessage="You can explore sections of the course using the outline below."
+    defaultMessage="Bạn có thể khám phá các phần của khóa học bằng cách sử dụng phác thảo bên dưới."
   />,
   placement: 'top',
   target: '#courseHome-outline',
   title: <FormattedMessage
     id="tours.outlineCheckpoint.title"
-    defaultMessage="Take the course!"
+    defaultMessage="Tham gia khóa học!"
   />,
 };
 
 const tabNavigationCheckpoint = {
   body: <FormattedMessage
     id="tours.tabNavigationCheckpoint.body"
-    defaultMessage="These tabs can be used to access other course materials, such as your progress, syllabus, etc."
+    defaultMessage="Bạn có thể sử dụng các tab này để truy cập các tài nguyên khác của khóa học, như tiến độ học, giáo trình, v.v."
   />,
   placement: 'bottom',
   target: '#courseTabsNavigation',
   title: <FormattedMessage
     id="tours.tabNavigationCheckpoint.title"
-    defaultMessage="Additional course resources"
+    defaultMessage="Tài nguyên bổ sung của khóa học"
   />,
 };
 

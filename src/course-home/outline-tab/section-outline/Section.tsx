@@ -54,9 +54,9 @@ const Section: React.FC<Props> = ({
   return (
     <li>
       <Collapsible
-        className="mb-2"
+        className="mb-4  border-secondary-subtle rounded shadow"
         styling="card-lg"
-        title={<SectionTitle {...{ complete, hideFromTOC, title }} />}
+        title={<SectionTitle complete={complete} hideFromTOC={hideFromTOC} title={title} />}
         open={open}
         onToggle={() => { setOpen(!open); }}
         iconWhenClosed={(
@@ -65,6 +65,8 @@ const Section: React.FC<Props> = ({
             iconAs={Plus}
             onClick={() => { setOpen(true); }}
             size="sm"
+            variant="light"
+            className='custom-dropdown-toggle'
           />
         )}
         iconWhenOpen={(
@@ -73,6 +75,8 @@ const Section: React.FC<Props> = ({
             iconAs={Minus}
             onClick={() => { setOpen(false); }}
             size="sm"
+            variant="light"
+            className='custom-dropdown-toggle'
           />
         )}
       >

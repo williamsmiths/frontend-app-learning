@@ -21,7 +21,7 @@ const CourseHandouts = () => {
   }
 
   return (
-    <section className="mb-4">
+    <section className="mb-4 order border-secondary-subtle rounded p-3 shadow">
       <h2 className="h4">{intl.formatMessage(messages.handouts)}</h2>
       <LmsHtmlFragment
         className="small"

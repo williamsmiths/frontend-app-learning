@@ -5,6 +5,16 @@ import { useModel } from '../../generic/model-store';
 const CourseStartAlert = React.lazy(() => import('./CourseStartAlert'));
 const CourseStartMasqueradeBanner = React.lazy(() => import('./CourseStartMasqueradeBanner'));
 
+export function useFormatDate() {
+  return (date) => {
+    if (!date) return '';
+    const d = new Date(date);
+    return new Intl.DateTimeFormat('vi-VN', {
+      year: 'numeric', month: '2-digit', day: '2-digit'
+    }).format(d);
+  };
+};
+
 function IsStartDateInFuture(courseId) {
   const {
     start,

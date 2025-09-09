@@ -51,7 +51,7 @@ const NewUserCourseHomeTourModal = ({
             {intl.formatMessage(messages.skipForNow)}
           </Button>
           <Button
-            variant="brand"
+            variant="primary"
             onClick={onStartTour}
           >
             {intl.formatMessage(messages.beginTour)}
