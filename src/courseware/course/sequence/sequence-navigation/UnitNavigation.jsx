@@ -28,7 +28,7 @@ const UnitNavigation = ({
     return (
       <PreviousButton
         isFirstUnit={isFirstUnit}
-        variant="outline-secondary"
+        variant="outline"
         buttonLabel={intl.formatMessage(messages.previousButton)}
         buttonStyle={buttonStyle}
         onClick={onClickPrevious}
@@ -42,7 +42,7 @@ const UnitNavigation = ({
     const { exitActive, exitText } = GetCourseExitNavigation(courseId, intl);
     const buttonText = (isLastUnit && exitText) ? exitText : intl.formatMessage(messages.nextButton);
     const disabled = isLastUnit && !exitActive;
-    const variant = 'outline-primary';
+    const variant = 'outline';
     const buttonStyle = `next-button ${isAtTop ? 'text-dark' : 'justify-content-center'}`;
 
     if (isAtTop) {

@@ -44,6 +44,7 @@ $gray-100: #F3F4F6;
 .bg-primary-blue {
   background-color: $primary-blue !important;
 }
+
 .border-primary-red{
   .trigger-base-btn{
     color: $primary-red !important;
@@ -101,6 +102,14 @@ $gray-100: #F3F4F6;
 .custom-outline-btn:hover {
   background-color: $primary-red !important;
   color: #fff !important;
+}
+
+.custom-icon-filled{
+  background-color: #fff !important;
+}
+.custom-icon-filled:hover {
+  background-color: $gray-100 !important;
+  color: $primary-red !important;
 }
 
 .collapsible-trigger {

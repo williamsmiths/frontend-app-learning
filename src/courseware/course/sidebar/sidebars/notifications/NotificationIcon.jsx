@@ -15,7 +15,7 @@ const NotificationIcon = ({
   return (
     <>
       <Icon src={WatchOutline} className="m-0 m-auto" alt={intl.formatMessage(messages.openNotificationTrigger)} />
-      {status === 'active'
+      {/* {status === 'active'
         ? (
           <span
             className={classNames(notificationColor, 'rounded-circle p-1 position-absolute')}
@@ -26,7 +26,7 @@ const NotificationIcon = ({
             }}
           />
         )
-        : null}
+        : null} */}
     </>
   );
 };

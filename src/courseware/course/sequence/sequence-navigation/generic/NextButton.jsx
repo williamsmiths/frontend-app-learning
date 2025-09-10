@@ -47,7 +47,8 @@ const NextButton = ({
   if (isAtTop) {
     return (
       <IconButton
-        className={`${buttonStyle} icon-hover`}
+        className={`${buttonStyle} icon-hover custom-icon-filled`}
+        variant='outline'
         onClick={onClick}
         src={nextArrow}
         disabled={disabled}

@@ -166,7 +166,7 @@ const OutlineTab = () => {
                       Thông tin về khoá học
                     </div>
                     <div>
-                      <Button ref={expandButtonRef} variant="light" className='custom-outline-btn' block onClick={() => { setExpandAll(!expandAll); }}>
+                      <Button ref={expandButtonRef} variant="outline" className='custom-outline-btn' block onClick={() => { setExpandAll(!expandAll); }}>
                         {expandAll ? intl.formatMessage(messages.collapseAll) : intl.formatMessage(messages.expandAll)}
                       </Button>
                     </div>

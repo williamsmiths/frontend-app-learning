@@ -49,7 +49,7 @@ const NotificationTrigger = ({
 
   return (
     <SidebarTriggerBase onClick={onClick} ariaLabel={intl.formatMessage(messages.openNotificationTrigger)}>
-      <NotificationIcon status={notificationStatus} notificationColor="bg-danger-500" />
+      <NotificationIcon status={notificationStatus} />
     </SidebarTriggerBase>
   );
 };

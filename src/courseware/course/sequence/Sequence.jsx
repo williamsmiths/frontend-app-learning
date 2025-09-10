@@ -169,7 +169,7 @@ const Sequence = ({
           unitId={unitId}
         />
         <CourseOutlineSidebarSlot />
-        <div className="sequence w-100 shadow-sm">
+        <div className="sequence w-100 shadow-sm rounded">
           {!isEnabledOutlineSidebar && (
             <div className="sequence-navigation-container">
               <SequenceNavigation
