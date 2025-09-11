@@ -25,15 +25,21 @@ const ProgressTab = () => {
   }
 
   return (
-    <>
+    <div>
       <ProgressHeader />
       <div className="row w-100 m-0">
         {/* Main body */}
         <div className="col-12 col-md-8 p-0">
-          {!disableProgressGraph && <CourseCompletion />}
-          <ProgressTabCertificateStatusMainBodySlot />
-          <ProgressTabCourseGradeSlot />
-          <ProgressTabGradeBreakdownSlot />
+          <div className='custom-group-progress p-4 mb-4 shadow-sm'>
+            {!disableProgressGraph && <CourseCompletion />}
+            <ProgressTabCertificateStatusMainBodySlot />
+          </div>
+          <div className='custom-group-progress p-4 mb-4 shadow-sm'>
+            <ProgressTabCourseGradeSlot />
+          </div>
+          <div className='custom-group-progress p-4 mb-4 shadow-sm'>
+            <ProgressTabGradeBreakdownSlot />
+          </div>
         </div>
 
         {/* Side panel */}
@@ -42,7 +48,7 @@ const ProgressTab = () => {
           <ProgressTabRelatedLinksSlot />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

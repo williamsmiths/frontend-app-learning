@@ -35,7 +35,7 @@ const DateSummary = ({
   };
 
   return (
-    <li className="p-0 mb-3 small text-dark-500">
+    <li className="p-0 mb-3 small text-gray-700-500">
       <div className="row">
         <FontAwesomeIcon icon={faCalendarAlt} className="ml-3 mt-1 mr-1" fixedWidth />
         <div className="ml-1 font-weight-bold">

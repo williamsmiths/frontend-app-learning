@@ -239,7 +239,7 @@ const CertificateStatus = () => {
   };
 
   return (
-    <section data-testid="certificate-status-component" className="text-dark-700 mb-4">
+    <section data-testid="certificate-status-component" className="text-gray-700 mb-4">
       <Card className="bg-light-200 raised-card">
         <ProgressCertificateStatusSlot courseId={courseId}>
           <div id={`${certCase}_certificate_status`}>

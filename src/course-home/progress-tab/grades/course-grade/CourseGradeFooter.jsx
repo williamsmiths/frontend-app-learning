@@ -51,8 +51,8 @@ const CourseGradeFooter = ({ passingGrade }) => {
     : <Icon src={WarningFilled} className="d-inline-flex align-bottom" />;
 
   return (
-    <div className={`row w-100 m-0 px-4 py-3 py-md-4 rounded-bottom ${isPassing ? 'bg-success-100' : 'bg-warning-100'}`}>
-      <div className="col-auto p-0">
+    <div className={`row w-100 m-0 px-4 py-3 py-md-4 rounded bg-gray-100`}>
+      <div className={`col-auto p-0 ${isPassing ? 'text-info-300' : 'text-warning-700'}`}>
         {icon}
       </div>
       <div className="col-11 pl-2 px-0">
@@ -68,7 +68,7 @@ const CourseGradeFooter = ({ passingGrade }) => {
           </span>
         )}
         {wideScreen && (
-          <span className="h4 m-0 align-bottom">
+          <span className="h5 m-0 align-center text-gray-700">
             {footerText}
             {hasLetterGrades && (
               <span style={{ whiteSpace: 'nowrap' }}>

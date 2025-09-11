@@ -60,7 +60,7 @@ const NewUserCourseHomeTourModal = ({
         )}
       onClose={onDismiss}
     >
-      <p className="text-dark-900">{intl.formatMessage(messages.newUserModalBody, { siteName: getConfig().SITE_NAME })}</p>
+      <p className="text-gray-700-900">{intl.formatMessage(messages.newUserModalBody, { siteName: getConfig().SITE_NAME })}</p>
     </MarketingModal>
   );
 };

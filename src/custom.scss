@@ -24,6 +24,10 @@ $gray-100: #F3F4F6;
   color: $primary-blue !important;
 }
 
+.bg-gray-100 {
+  background-color: $gray-100 !important;
+}
+
 .bg-primary {
   background-color: $primary-red !important;
 }
@@ -44,14 +48,25 @@ $gray-100: #F3F4F6;
   background-color: $primary-blue !important;
 }
 
-.border-primary-red{
-  .trigger-base-btn{
+.border-primary-red {
+  .trigger-base-btn {
     color: $primary-red !important;
   }
 }
 
-.custom-navigation-btn{
+.btn-primary {
+  color: #FFFFFF;
+  background-color: $primary-red !important;
+  border-color: $primary-red !important;
 }
+
+.btn-primary:hover {
+  background-color: $primary-red-dark !important;
+  border-color: $primary-red-dark !important;
+  color: #FFFFFF;
+}
+
+.custom-navigation-btn {}
 
 .custom-explore-btn {
   background-color: $primary-red !important;
@@ -103,9 +118,10 @@ $gray-100: #F3F4F6;
   color: #fff !important;
 }
 
-.custom-icon-filled{
+.custom-icon-filled {
   background-color: #fff !important;
 }
+
 .custom-icon-filled:hover {
   background-color: $gray-100 !important;
   color: $primary-red !important;
@@ -128,4 +144,19 @@ $gray-100: #F3F4F6;
 .custom-dropdown-toggle:focus {
   background: $primary-red !important;
   color: #fff !important;
+}
+
+
+.custom-group-progress {
+  border: 1px solid $gray-100 !important;
+  border-radius: 15px !important;
+}
+
+.pgn__checkpoint {
+  background: $gray-100 !important;
+  border-top-color: $primary-red !important;
+}
+
+.pgn__checkpoint .pgn__checkpoint-breadcrumb.pgn__checkpoint-breadcrumb_active {
+  background: $primary-red !important;
 }

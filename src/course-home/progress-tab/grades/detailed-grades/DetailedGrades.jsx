@@ -53,14 +53,14 @@ const DetailedGrades = () => {
   );
 
   return (
-    <section className="text-dark-700">
+    <section className="text-gray-700">
       <h3 className="h4">{intl.formatMessage(messages.detailedGrades)}</h3>
-      <ul className="micro mb-3 pl-3 text-gray-700">
-        <li>
+      <ul className="small mb-3 pl-3 text-gray-700">
+        <li className="mb-1">
           <b>{intl.formatMessage(messages.practiceScoreLabel)} </b>
           {intl.formatMessage(messages.practiceScoreInfoText)}
         </li>
-        <li>
+        <li className="mb-1">
           <b>{intl.formatMessage(messages.gradedScoreLabel)} </b>
           {intl.formatMessage(messages.gradedScoreInfoText)}
         </li>

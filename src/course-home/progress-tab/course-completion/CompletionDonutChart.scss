@@ -74,3 +74,6 @@
     stroke: $primary-red;
   }
 }
+.donut-ring.complete-stroke, .donut-segment.complete-stroke, .donut-hole.complete-stroke {
+    stroke: $primary-red !important;
+}

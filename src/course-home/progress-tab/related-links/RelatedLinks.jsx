@@ -31,7 +31,7 @@ const RelatedLinks = () => {
   const datesTabUrl = datesTab && datesTab.url;
 
   return (
-    <section className="mb-4 x-small">
+    <section className="mb-4 x-small custom-group-progress p-4 mb-4 shadow-sm">
       <h3 className="h4">{intl.formatMessage(messages.relatedLinks)}</h3>
       <ul className="pl-4">
         {datesTabUrl && (

@@ -3,11 +3,10 @@
 
 .course-tabs-navigation {
   position: relative;
-  background-color: $gray-100;
+  border-bottom: 1px solid $gray-100;
   .nav a,
   .nav button {
     padding: 10px;
-    margin: 5px;
     &:hover {
       color: $primary-red !important;
       background-color: $gray-100 !important;

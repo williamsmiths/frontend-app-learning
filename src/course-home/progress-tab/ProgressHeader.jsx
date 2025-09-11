@@ -26,11 +26,14 @@ const ProgressHeader = () => {
 
   return (
     <div className="row w-100 m-0 mt-3 mb-4 justify-content-between">
-      <h1>{pageTitle}</h1>
+      <h2 className='text-gray-700'>{pageTitle}</h2>
       {administrator && studioUrl && (
-      <Button variant="outline-primary" size="sm" className="align-self-center" href={studioUrl}>
-        {intl.formatMessage(messages.studioLink)}
-      </Button>
+        <Button variant="outline" size="sm" className="align-self-center custom-outline-btn" style={{
+          fontSize: '0.875rem',
+          fontWeight: 'normal',
+        }} href={studioUrl}>
+          {intl.formatMessage(messages.studioLink)}
+        </Button>
       )}
     </div>
   );

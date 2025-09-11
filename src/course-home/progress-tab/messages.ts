@@ -3,17 +3,17 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   progressHeader: {
     id: 'progress.header',
-    defaultMessage: 'Your progress',
+    defaultMessage: 'Tiến trình của bạn',
     description: 'Headline or title for the progress tab',
   },
   progressHeaderForTargetUser: {
     id: 'progress.header.targetUser',
-    defaultMessage: 'Course progress for {username}',
+    defaultMessage: 'Tiến trình khóa học của {username}',
     description: 'Header when displaying the progress for a different user',
   },
   studioLink: {
     id: 'progress.link.studio',
-    defaultMessage: 'View grading in Studio',
+    defaultMessage: 'Xem chấm điểm trong Studio',
     description: 'Text shown for button that redirects to the studio if the user is a staff memember',
   },
 });

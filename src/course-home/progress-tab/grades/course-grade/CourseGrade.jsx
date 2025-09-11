@@ -28,16 +28,17 @@ const CourseGrade = () => {
   const applyLockedOverlay = gradesFeatureIsFullyLocked ? 'locked-overlay' : '';
 
   return (
-    <section className="text-dark-700 my-4 rounded raised-card">
+    <section className="text-gray-700 mb-4 rounded raised-card">
       {(gradesFeatureIsFullyLocked || gradesFeatureIsPartiallyLocked) && <CourseGradeHeader />}
       <div className={applyLockedOverlay} aria-hidden={gradesFeatureIsFullyLocked}>
         <div className="row w-100 m-0 p-4">
           <div className="col-12 col-sm-6 p-0 pr-sm-5.5">
-            <h2>{creditCourseRequirements
-              ? intl.formatMessage(messages.gradesAndCredit)
-              : intl.formatMessage(messages.grades)}
+            <h2 className="h3 fw-bold text-primary-red mb-2">
+              {creditCourseRequirements
+                ? intl.formatMessage(messages.gradesAndCredit)
+                : intl.formatMessage(messages.grades)}
             </h2>
-            <p className="small">
+            <p className="small text-muted mb-0">
               {intl.formatMessage(messages.courseGradeBody)}
             </p>
           </div>
