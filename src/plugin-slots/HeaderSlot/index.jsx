@@ -1,14 +1,12 @@
-import PropTypes from 'prop-types';
-import { PluginSlot } from '@openedx/frontend-plugin-framework';
+import PropTypes from "prop-types";
+import { PluginSlot } from "@openedx/frontend-plugin-framework";
 
-import { LearningHeader as Header } from '@edx/frontend-component-header';
+import { LearningHeader as Header } from "@edx/frontend-component-header";
 
-const HeaderSlot = ({
-  courseOrg, courseNumber, courseTitle, showUserDropdown,
-}) => (
+const HeaderSlot = ({ courseOrg, courseNumber, courseTitle, showUserDropdown }) => (
   <PluginSlot
     id="org.openedx.frontend.layout.header_learning.v1"
-    idAliases={['header_slot']}
+    idAliases={["header_slot"]}
     slotOptions={{
       mergeProps: true,
     }}

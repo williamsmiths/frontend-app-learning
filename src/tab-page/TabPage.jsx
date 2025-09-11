@@ -1,87 +1,74 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useIntl } from '@edx/frontend-platform/i18n';
-import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { useIntl } from "@edx/frontend-platform/i18n";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
-import { Toast } from '@openedx/paragon';
-import { FooterSlot } from '@edx/frontend-component-footer';
-import HeaderSlot from '../plugin-slots/HeaderSlot';
-import PageLoading from '../generic/PageLoading';
-import { getAccessDeniedRedirectUrl } from '../shared/access';
-import { useModel } from '../generic/model-store';
+import { Toast } from "@openedx/paragon";
+import { FooterSlot } from "@edx/frontend-component-footer";
+import HeaderSlot from "../plugin-slots/HeaderSlot";
+import PageLoading from "../generic/PageLoading";
+import { getAccessDeniedRedirectUrl } from "../shared/access";
+import { useModel } from "../generic/model-store";
 
-import genericMessages from '../generic/messages';
-import messages from './messages';
-import LoadedTabPage from './LoadedTabPage';
-import { setCallToActionToast } from '../course-home/data/slice';
-import LaunchCourseHomeTourButton from '../product-tours/newUserCourseHomeTour/LaunchCourseHomeTourButton';
+import genericMessages from "../generic/messages";
+import messages from "./messages";
+import LoadedTabPage from "./LoadedTabPage";
+import { setCallToActionToast } from "../course-home/data/slice";
+import LaunchCourseHomeTourButton from "../product-tours/newUserCourseHomeTour/LaunchCourseHomeTourButton";
+import CustomFooter from "../components/CustomFooter";
 
 const TabPage = (props) => {
   const intl = useIntl();
-  const {
-    activeTabSlug,
-    courseId,
-    courseStatus,
-    metadataModel,
-  } = props;
-  const {
-    toastBodyLink,
-    toastBodyText,
-    toastHeader,
-  } = useSelector(state => state.courseHome);
+  const { activeTabSlug, courseId, courseStatus, metadataModel } = props;
+  const { toastBodyLink, toastBodyText, toastHeader } = useSelector((state) => state.courseHome);
   const dispatch = useDispatch();
-  const {
-    courseAccess,
-    number,
-    org,
-    start,
-    title,
-  } = useModel('courseHomeMeta', courseId);
+  const { courseAccess, number, org, start, title } = useModel("courseHomeMeta", courseId);
 
-  if (courseStatus === 'denied') {
+  if (courseStatus === "denied") {
     const redirectUrl = getAccessDeniedRedirectUrl(courseId, activeTabSlug, courseAccess, start);
     if (redirectUrl) {
-      return (<Navigate to={redirectUrl} replace />);
+      return <Navigate to={redirectUrl} replace />;
     }
   }
-
+  console.log("LOGGG", courseAccess, number, org, start, title);
   return (
     <>
-      {['loaded', 'denied'].includes(courseStatus) && (
+      {["loaded", "denied"].includes(courseStatus) && (
         <>
           <Toast
-            action={toastBodyText ? {
-              label: toastBodyText,
-              href: toastBodyLink,
-            } : null}
+            action={
+              toastBodyText
+                ? {
+                    label: toastBodyText,
+                    href: toastBodyLink,
+                  }
+                : null
+            }
             closeLabel={intl.formatMessage(genericMessages.close)}
-            onClose={() => dispatch(setCallToActionToast({ header: '', link: null, link_text: null }))}
-            show={!!(toastHeader)}
+            onClose={() => dispatch(setCallToActionToast({ header: "", link: null, link_text: null }))}
+            show={!!toastHeader}
           >
             {toastHeader}
           </Toast>
-          {metadataModel === 'courseHomeMeta' && (<LaunchCourseHomeTourButton srOnly />)}
+          {metadataModel === "courseHomeMeta" && <LaunchCourseHomeTourButton srOnly />}
         </>
       )}
 
       <HeaderSlot courseOrg={org} courseNumber={number} courseTitle={title} />
 
-      {courseStatus === 'loading' && (
-        <PageLoading srMessage={intl.formatMessage(messages.loading)} />
-      )}
+      {courseStatus === "loading" && <PageLoading srMessage={intl.formatMessage(messages.loading)} />}
 
-      {['loaded', 'denied'].includes(courseStatus) && (
-        <LoadedTabPage {...props} />
-      )}
+      {["loaded", "denied"].includes(courseStatus) && <LoadedTabPage {...props} />}
 
       {/* courseStatus 'failed' and any other unexpected course status. */}
-      {(!['loading', 'loaded', 'denied'].includes(courseStatus)) && (
-        <p className="text-center py-5 mx-auto" style={{ maxWidth: '30em' }}>
+      {!["loading", "loaded", "denied"].includes(courseStatus) && (
+        <p className="text-center py-5 mx-auto" style={{ maxWidth: "30em" }}>
           {intl.formatMessage(messages.failure)}
         </p>
       )}
-      <FooterSlot />
+      {/* <FooterSlot /> */}
+      <CustomFooter />
     </>
   );
 };
