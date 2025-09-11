@@ -1,3 +1,5 @@
+@import "../../../custom.scss";
+
 .donut rect {
   fill: transparent;
   width: 4px;
@@ -29,7 +31,7 @@
 }
 
 .donut-chart-text {
-  fill: $primary-500;
+  fill: $primary-red;
   -moz-transform: translateY(0.25em);
   -ms-transform: translateY(0.25em);
   -webkit-transform: translateY(0.25em);
@@ -69,6 +71,6 @@
   }
 
   &.locked-stroke {
-    stroke: $primary-500;
+    stroke: $primary-red;
   }
 }

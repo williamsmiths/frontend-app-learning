@@ -11,7 +11,7 @@ const CheckmarkBullet = () => (
 // Must be child of a <ul className="fa-ul">
 export const VerifiedCertBullet = () => {
   const verifiedCertLink = (
-    <a className="inline-link-underline font-weight-bold" rel="noopener noreferrer" target="_blank" href={`${getConfig().MARKETING_SITE_BASE_URL}/verified-certificate`}>
+    <a className="inline-link-underline font-weight-bold text-primary-red" rel="noopener noreferrer" target="_blank" href={`${getConfig().MARKETING_SITE_BASE_URL}/verified-certificate`}>
       <FormattedMessage
         id="learning.generic.upsell.verifiedCertBullet.verifiedCert"
         defaultMessage="verified certificate"

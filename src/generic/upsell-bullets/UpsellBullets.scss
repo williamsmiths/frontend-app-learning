@@ -1,3 +1,5 @@
+@import "../../custom.scss";
+
 .upsell-bullet > .fa-li {
     left: -31px;
     padding-right: 22px;
@@ -8,6 +10,6 @@
 }
 
 .upsell-bullet a {
-  color: $primary-500;
+  color: $primary-red-dark;
 }
 

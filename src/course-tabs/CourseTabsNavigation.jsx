@@ -17,7 +17,7 @@ const CourseTabsNavigation = ({
   
   return (
     <div id="courseTabsNavigation" className={classNames('course-tabs-navigation', className)}>
-      <div className="container-xl ">
+      <div className="container-xl">
         <div className="nav-bar">
           <div className="nav-menu">
             <Tabs
@@ -27,7 +27,7 @@ const CourseTabsNavigation = ({
               {tabs.map(({ url, title, slug }) => (
                 <a
                   key={slug}
-                  className={classNames('nav-item flex-shrink-0 nav-link', { active: slug === activeTabSlug })}
+                  className={classNames('nav-item flex-shrink-0 nav-link', { 'active active-tab': slug === activeTabSlug })}
                   href={url}
                 >
                   {title}

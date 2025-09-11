@@ -9,7 +9,7 @@
     padding: 10px;
     margin: 5px;
     &:hover {
-      color: $primary;
+      color: $primary-red !important;
       background-color: $gray-100 !important;
     }
   }
@@ -39,5 +39,9 @@
     margin-bottom: 10px;
   }
 
-
+  .active-tab{
+    font-weight: 600;
+    color: $primary-red !important;
+    border-bottom: 2px solid $primary-red !important;
+  }
 }

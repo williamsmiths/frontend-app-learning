@@ -1,3 +1,5 @@
+@import "../../../../custom.scss";
+
 .grade-bar {
   rect {
     height: 6px;
@@ -8,12 +10,12 @@
   }
 
   .grade-bar__divider {
-    fill: $primary-500;
+    fill: $primary-red;
     width: 1px;
   }
 
   .grade-bar--passing {
-    fill: $primary-500;
+    fill: $primary-red;
   }
 
   .grade-bar--current-passing {
@@ -31,7 +33,7 @@
 
 #minimum-grade-tooltip {
   .arrow::after {
-    border-bottom-color: $primary-500;
+    border-bottom-color: $primary-red;
   }
 }
 
