@@ -35,12 +35,24 @@ import PageNotFound from "./generic/PageNotFound";
 
 subscribe(APP_READY, () => {
   const root = createRoot(document.getElementById("root"));
+  const existingFavicons = document.querySelectorAll('link[rel*="icon"]');
+  existingFavicons.forEach((link) => link.remove());
 
+  // Add our custom favicon
+  const link = document.createElement("link");
+  link.rel = "shortcut icon";
+  link.type = "image/x-icon";
+  link.href = `${getConfig().LMS_BASE_URL}/static/indigo/images/favicon.ico`;
+  document.head.appendChild(link);
   root.render(
     <StrictMode>
       <AppProvider store={store}>
         <Helmet>
-          <link rel="shortcut icon" href={getConfig().FAVICON_URL} type="image/x-icon" />
+          <link
+            rel="shortcut icon"
+            href={`${getConfig().LMS_BASE_URL}/static/indigo/images/favicon.ico`}
+            type="image/x-icon"
+          />
         </Helmet>
         <PathFixesProvider>
           <NoticesProvider>
