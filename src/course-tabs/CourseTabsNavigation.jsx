@@ -12,6 +12,25 @@ import { useCoursewareSearchState } from "../course-home/courseware-search/hooks
 import { useModel } from "../generic/model-store";
 import { createJitsiToken, getUserInfo, createJitsiMeetingUrl } from "../shared/jitsi-service";
 
+// Helper function để lấy JWT token từ cookie
+const getJWTTokenFromCookie = () => {
+  try {
+    const jwtCookie = document.cookie.split("; ").find((row) => row.startsWith("edx-jwt-cookie-header-payload="));
+
+    if (jwtCookie) {
+      const jwtToken = jwtCookie.split("=")[1];
+      console.log("🔑 JWT Token từ cookie:", jwtToken);
+      return jwtToken;
+    } else {
+      console.warn("⚠️ Không tìm thấy edx-jwt-cookie-header-payload cookie");
+      return null;
+    }
+  } catch (error) {
+    console.error("❌ Lỗi khi lấy JWT token từ cookie:", error);
+    return null;
+  }
+};
+
 const CourseTabsNavigation = ({ activeTabSlug, className, tabs, courseId }) => {
   const intl = useIntl();
   const config = getConfig();
@@ -30,12 +49,50 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs, courseId }) => {
       window.currentCourseId = courseId;
       window.currentCourseInfo = courseInfo;
       window.currentUserInfo = currentUserInfo;
+      window.getJWTTokenFromCookie = getJWTTokenFromCookie;
+      window.handleCaseStudyClick = handleCaseStudyClick;
       console.log("🧪 Course data available in window:");
       console.log("- window.currentCourseId - Current course ID");
       console.log("- window.currentCourseInfo - Current course info");
       console.log("- window.currentUserInfo - Current user info");
+      console.log("- window.getJWTTokenFromCookie() - Get JWT token from cookie");
+      console.log("- window.handleCaseStudyClick() - Test CaseStudy SSO");
     }
   }, [courseId, courseInfo, currentUserInfo]);
+
+  // Xử lý click vào CaseStudy link
+  const handleCaseStudyClick = (e) => {
+    e.preventDefault();
+
+    try {
+      console.log("=== CASESTUDY SSO AUTHENTICATION ===");
+
+      // Lấy JWT token từ cookie
+      const jwtToken = getJWTTokenFromCookie();
+
+      if (jwtToken) {
+        // Tạo URL SSO với token
+        const ssoUrl = `https://caseuniverse.duytan.edu.vn/sso/callback?token=${jwtToken}`;
+
+        console.log("🚀 Opening CaseStudy with SSO:", ssoUrl);
+        console.log("🔑 Token length:", jwtToken.length);
+
+        // Mở CaseStudy trong tab mới với SSO
+        window.open(ssoUrl, "_blank", "noopener,noreferrer");
+      } else {
+        // Fallback: mở CaseStudy mà không có SSO
+        const fallbackUrl = "https://caseuniverse.duytan.edu.vn";
+        console.log("🏠 Fallback: Opening CaseStudy without SSO:", fallbackUrl);
+        window.open(fallbackUrl, "_blank", "noopener,noreferrer");
+      }
+
+      console.log("=== CASESTUDY SSO COMPLETED ===");
+    } catch (error) {
+      console.error("❌ Error in CaseStudy SSO:", error);
+      // Fallback nếu có lỗi
+      window.open("https://caseuniverse.duytan.edu.vn", "_blank", "noopener,noreferrer");
+    }
+  };
 
   // Xử lý click vào Meeting link
   const handleMeetingClick = async (e) => {
@@ -109,7 +166,12 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs, courseId }) => {
                   {title}
                 </a>
               ))}
-              <a className={classNames("nav-item flex-shrink-0 nav-link")} href="#case-study">
+              <a
+                className={classNames("nav-item flex-shrink-0 nav-link")}
+                href="#"
+                onClick={handleCaseStudyClick}
+                style={{ cursor: "pointer" }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25px"
