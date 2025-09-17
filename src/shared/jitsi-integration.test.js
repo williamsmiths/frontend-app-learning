@@ -71,13 +71,26 @@ export const testJitsiIntegration = async () => {
     const urlWithToken = createJitsiMeetingUrl(mockCourseInfo.courseId, mockToken);
     console.log('URL with token:', urlWithToken);
 
-    // Test 8: Test token creation (cần network connection)
-    console.log('8. Testing token creation...');
-    console.log('Note: This requires network connection to jitok.emrah.com');
-    const token = await createJitsiToken(mockCourseInfo, mockUserInfo);
-    console.log('Created token:', token ? 'SUCCESS' : 'FAILED');
+    // Test 8: Test token creation với Duy Tan API
+    console.log('8. Testing token creation với Duy Tan API...');
+    console.log('Note: This requires network connection to apiuniverse.duytan.edu.vn');
 
-    console.log('=== JITSI INTEGRATION TEST COMPLETED ===');
+    try {
+      const token = await createJitsiToken(mockCourseInfo, mockUserInfo);
+      console.log('Created token:', token ? 'SUCCESS' : 'FAILED');
+
+      if (token) {
+        console.log('Token length:', token.length);
+        console.log('Token preview:', token.substring(0, 50) + '...');
+
+        // Test URL generation với token thật
+        console.log('9. Testing URL creation với token thật...');
+        const meetingUrl = createJitsiMeetingUrl(mockCourseInfo.courseId, token);
+        console.log('Meeting URL with real token:', meetingUrl);
+      }
+    } catch (error) {
+      console.log('Token creation failed:', error.message);
+    } console.log('=== JITSI INTEGRATION TEST COMPLETED ===');
     return true;
 
   } catch (error) {
@@ -132,13 +145,48 @@ export const testJWTParsingWithMockData = () => {
   return processedUserInfo;
 };
 
+// Test với JWT token thật từ Duy Tan API
+export const testWithRealDuyTanToken = () => {
+  console.log('=== TESTING WITH REAL DUY TAN JWT TOKEN ===');
+
+  // Token thật từ Duy Tan API mà bạn cung cấp
+  const realToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJteWFwcGlkIiwiaXNzIjoibXlhcHBpZCIsInN1YiI6IioiLCJyb29tIjoiKiIsImlhdCI6MTc1ODEwMDMyOCwibmJmIjoxNzU4MTAwMzQwLCJleHAiOjE3NTgxMDU3NDAsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjQiLCJuYW1lIjoiYWRtaW4ifX19.rVlcYKHn87udwwDJPFEdKzqXi8OGf5KnMthkIr80-SQ';
+
+  console.log('Real JWT Token:');
+  console.log('- Length:', realToken.length);
+  console.log('- Parts count:', realToken.split('.').length);
+  console.log('- Preview:', realToken.substring(0, 50) + '...');
+
+  // Test URL generation với token thật
+  const testCourseId = 'course-v1:TestOrg+CS101+2024';
+  const meetingUrl = createJitsiMeetingUrl(testCourseId, realToken);
+
+  console.log('Test Results:');
+  console.log('- Course ID:', testCourseId);
+  console.log('- Generated Meeting URL:', meetingUrl);
+
+  // Verify URL format
+  const expectedPattern = /^https:\/\/meet\.jit\.si\/[^?]+\?jwt=[^&]+$/;
+  const isValidFormat = expectedPattern.test(meetingUrl);
+
+  console.log('URL Validation:');
+  console.log('- Format correct:', isValidFormat ? '✅ YES' : '❌ NO');
+  console.log('- Has query parameter (?):', meetingUrl.includes('?jwt=') ? '✅ YES' : '❌ NO');
+  console.log('- No hash parameter (#):', !meetingUrl.includes('#') ? '✅ YES' : '❌ NO');
+
+  console.log('=== TEST COMPLETED ===');
+  return { meetingUrl, isValidFormat };
+};
+
 // Helper để run test trong browser console
 if (typeof window !== 'undefined') {
   window.testJitsiIntegration = testJitsiIntegration;
   window.testJWTParsingWithMockData = testJWTParsingWithMockData;
   window.testRoomNameSanitization = testRoomNameSanitization;
+  window.testWithRealDuyTanToken = testWithRealDuyTanToken;
   console.log('Jitsi integration tests available:');
   console.log('- window.testJitsiIntegration()');
   console.log('- window.testJWTParsingWithMockData()');
   console.log('- window.testRoomNameSanitization()');
+  console.log('- window.testWithRealDuyTanToken()');
 }

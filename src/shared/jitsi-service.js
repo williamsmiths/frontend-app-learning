@@ -154,35 +154,18 @@ export const createJitsiToken = async (courseInfo, userInfo) => {
       throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
     }
 
-    const responseText = await response.text();
-    console.log('📥 Raw response text:', responseText);
+    // Duy Tan API trả về JWT token trực tiếp (text/plain)
+    const jwtToken = await response.text();
+    console.log('📥 JWT Token từ Duy Tan API:', jwtToken);
 
-    let tokenData;
-    try {
-      tokenData = JSON.parse(responseText);
-      console.log('✅ Parsed response:', tokenData);
-    } catch (parseError) {
-      console.error('❌ JSON Parse Error:', parseError);
-      console.error('Raw response that failed to parse:', responseText);
-      throw new Error(`Failed to parse JSON response: ${parseError.message}`);
-    }
-
-    if (tokenData && tokenData.token) {
-      console.log('🎉 Token created successfully! Length:', tokenData.token.length);
-      console.log('🔍 Raw token from API:', tokenData.token);
-
-      // Clean token - remove any surrounding quotes
-      let cleanToken = tokenData.token;
-      if (typeof cleanToken === 'string') {
-        cleanToken = cleanToken.replace(/^["']|["']$/g, ''); // Remove quotes from start/end
-        console.log('🧹 Cleaned token:', cleanToken);
-      }
-
+    // Kiểm tra xem có phải JWT token hợp lệ không
+    if (jwtToken && jwtToken.includes('.') && jwtToken.split('.').length === 3) {
+      console.log('🎉 JWT Token hợp lệ! Length:', jwtToken.length);
       console.log('=== CREATING JITSI TOKEN - SUCCESS ===');
-      return cleanToken;
+      return jwtToken.trim(); // Chỉ trim whitespace, không làm gì khác
     } else {
-      console.error('❌ No token in response:', tokenData);
-      throw new Error('No token found in API response');
+      console.error('❌ Invalid JWT token format:', jwtToken);
+      throw new Error('Invalid JWT token format from API');
     }
 
   } catch (error) {
