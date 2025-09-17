@@ -95,7 +95,7 @@ export const MasqueradeWidget: React.FC<Props> = ({ courseId, onError }) => {
           <Dropdown.Toggle id="masquerade-widget-toggle" variant="inverse-outline-primary">
             {active.groupName ?? active.userName ?? intl.formatMessage(messages.titleStaff)}
           </Dropdown.Toggle>
-          <Dropdown.Menu>
+          <Dropdown.Menu className='p-2'>
             {available.map(group => (
               <MasqueradeWidgetOption
                 groupId={group.groupId}

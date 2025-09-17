@@ -69,7 +69,7 @@ export const MasqueradeWidgetOption: React.FC<Props> = ({
   const className = isSelected ? 'active' : '';
   return (
     <Dropdown.Item
-      className={className}
+      className={`${className} custom-dropdown-item`}
       href="#"
       onClick={handleClick}
     >

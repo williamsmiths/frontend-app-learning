@@ -98,7 +98,6 @@ $gray-100: #F3F4F6;
   background-color: #fff !important;
   border: 1px solid $primary-red !important;
   color: $primary-red !important;
-  padding: 8px 24px !important;
   font-weight: 600;
   font-size: 16px;
   text-align: center;
@@ -142,6 +141,20 @@ $gray-100: #F3F4F6;
 
 .custom-dropdown-toggle:hover,
 .custom-dropdown-toggle:focus {
+  background: $primary-red !important;
+  color: #fff !important;
+}
+
+.custom-dropdown-item{
+  margin: 5px 0 !important;
+  &:hover,
+  &:focus {
+    background: $gray-100 !important;
+    color: $primary-red !important;
+  }
+}
+
+a.active.custom-dropdown-item.pgn__dropdown-item.dropdown-item {
   background: $primary-red !important;
   color: #fff !important;
 }
