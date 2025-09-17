@@ -169,8 +169,17 @@ export const createJitsiToken = async (courseInfo, userInfo) => {
 
     if (tokenData && tokenData.token) {
       console.log('🎉 Token created successfully! Length:', tokenData.token.length);
+      console.log('🔍 Raw token from API:', tokenData.token);
+
+      // Clean token - remove any surrounding quotes
+      let cleanToken = tokenData.token;
+      if (typeof cleanToken === 'string') {
+        cleanToken = cleanToken.replace(/^["']|["']$/g, ''); // Remove quotes from start/end
+        console.log('🧹 Cleaned token:', cleanToken);
+      }
+
       console.log('=== CREATING JITSI TOKEN - SUCCESS ===');
-      return tokenData.token;
+      return cleanToken;
     } else {
       console.error('❌ No token in response:', tokenData);
       throw new Error('No token found in API response');
@@ -194,13 +203,28 @@ export const createJitsiMeetingUrl = (courseId, token) => {
   console.log('Creating meeting URL with sanitized room:', roomName);
 
   if (token) {
-    // Use JWT token in URL parameter
+    // Clean token - ensure no quotes or extra characters
+    let cleanToken = token;
+    if (typeof cleanToken === 'string') {
+      cleanToken = cleanToken.replace(/^["']|["']$/g, ''); // Remove quotes
+      cleanToken = cleanToken.trim(); // Remove whitespace
+    }
+
     console.log('🔐 Creating meeting URL with JWT token');
-    return `${baseUrl}/${roomName}?jwt=${token}`;
+    console.log('🔍 Token to use:', cleanToken);
+
+    // Use ? for query parameter, not #
+    const meetingUrl = `${baseUrl}/${roomName}?jwt=${cleanToken}`;
+    console.log('🔗 Generated meeting URL:', meetingUrl);
+
+    return meetingUrl;
   } else {
     // Fallback: meeting không có token
     console.log('🏠 Creating tokenless meeting URL');
-    return `${baseUrl}/${roomName}`;
+    const fallbackUrl = `${baseUrl}/${roomName}`;
+    console.log('🔗 Generated fallback URL:', fallbackUrl);
+
+    return fallbackUrl;
   }
 };
 
