@@ -13,7 +13,7 @@ export const JITSI_CONFIG = {
 
   // Cấu hình Jitsi Meet
   JITSI_MEET_CONFIG: {
-    baseUrl: 'https://meet.jit.si',
+    baseUrl: 'https://meet.minhtuandng.id.vn',
     roomPrefix: 'course-'
   },
 
