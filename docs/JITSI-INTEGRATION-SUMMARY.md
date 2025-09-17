@@ -9,7 +9,7 @@ Jitsi Meet integration cho phép students và instructors tham gia video meeting
 ### ✅ Core Functionality
 
 - **Meeting Button**: Added to course navigation tabs
-- **Token Generation**: JWT tokens từ jitok.emrah.com API
+- **Token Generation**: JWT tokens từ Duy Tan Universe API
 - **Room Management**: Auto-sanitized room names từ course IDs
 - **User Authentication**: JWT cookie parsing và fallback auth
 - **URL Generation**: Proper meeting URLs với token support
@@ -40,18 +40,33 @@ Jitsi Meet integration cho phép students và instructors tham gia video meeting
 
 ```javascript
 export const JITSI_CONFIG = {
-  JITOK_API_URL: "https://jitok.emrah.com/api",
+  JITOK_API_URL: "https://apiuniverse.duytan.edu.vn/api",
   JWT_CONFIG: {
     algorithm: "HS256",
-    secret: "jitok-secret",
-    audience: "jitsi",
-    tokenLifetime: 3600000, // 1 hour
+    secret: "myappsecret",
+    audience: "myappid",
+    tokenLifetime: 90 * 60 * 1000, // 90 minutes
   },
   JITSI_MEET_CONFIG: {
     baseUrl: "https://meet.jit.si",
     roomPrefix: "course-",
   },
 };
+```
+
+### API Payload Format
+
+```json
+{
+  "alg": "HS256",
+  "secret": "myappsecret",
+  "aud": "myappid",
+  "room": "*",
+  "nbf": "2022-10-15T15:00+02:00",
+  "exp": "2022-10-15T16:30+02:00",
+  "cntx_user_id": "user-id",
+  "cntx_user_name": "User Name"
+}
 ```
 
 ## 🎯 Usage

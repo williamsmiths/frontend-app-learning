@@ -21,27 +21,8 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs, courseId }) => {
   // Lấy thông tin khóa học từ model store
   const courseInfo = useModel("courseHomeMeta", courseId);
 
-  // Log thông tin khóa học
-  console.log("=== COURSE INFORMATION ===");
-  console.log("Course ID:", courseId);
-  console.log("Course Info:", courseInfo);
-  console.log("Course Title:", courseInfo.title);
-  console.log("Course Org:", courseInfo.org);
-  console.log("Course Tabs:", tabs);
-  console.log("Config:", config);
-
   // Log thông tin user từ JWT
   const currentUserInfo = getUserInfo();
-  console.log("=== USER INFORMATION ===");
-  console.log("User Info:", currentUserInfo);
-  console.log("User ID:", currentUserInfo.userId);
-  console.log("Username:", currentUserInfo.username);
-  console.log("User Name:", currentUserInfo.userName);
-  console.log("Email:", currentUserInfo.email);
-  console.log("Is Admin:", currentUserInfo.isAdmin);
-  console.log("Is Superuser:", currentUserInfo.isSuperuser);
-  console.log("Email Verified:", currentUserInfo.emailVerified);
-  console.log("========================");
 
   // Thêm course info vào window để có thể access từ console
   React.useEffect(() => {

@@ -1,4 +1,4 @@
-// Service để tạo Jitsi token sử dụng API jitok.emrah.com
+// Service để tạo Jitsi token sử dụng Duy Tan Universe API
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { getConfig } from '@edx/frontend-platform';
 import { JITSI_CONFIG, logJitsiConfig } from './jitsi-config';
@@ -110,27 +110,32 @@ export const createJitsiToken = async (courseInfo, userInfo) => {
     console.log('Original course ID:', courseInfo.courseId);
     console.log('Sanitized room name:', sanitizedRoomName);
 
+    // Tạo timestamps theo format mới
+    const now = new Date();
+    const expTime = new Date(now.getTime() + JITSI_CONFIG.JWT_CONFIG.tokenLifetime);
+
+    // Format timestamps theo ISO 8601 với timezone
+    const nbfTime = now.toISOString().replace('Z', '+00:00');
+    const expTime_formatted = expTime.toISOString().replace('Z', '+00:00');
+
     const tokenPayload = {
       alg: JITSI_CONFIG.JWT_CONFIG.algorithm,
       secret: JITSI_CONFIG.JWT_CONFIG.secret,
       aud: JITSI_CONFIG.JWT_CONFIG.audience,
-      room: `${JITSI_CONFIG.JITSI_MEET_CONFIG.roomPrefix}${sanitizedRoomName}`,
-      nbf: new Date().toISOString(),
-      exp: new Date(Date.now() + JITSI_CONFIG.JWT_CONFIG.tokenLifetime).toISOString(),
+      room: "*", // Sử dụng wildcard như trong example
+      nbf: nbfTime,
+      exp: expTime_formatted,
       cntx_user_id: userInfo.userId || JITSI_CONFIG.FALLBACK_CONFIG.userId,
-      cntx_user_name: userInfo.userName || JITSI_CONFIG.FALLBACK_CONFIG.userName,
-      cntx_user_email: userInfo.email || '',
-      cntx_user_role: userInfo.isAdmin ? 'admin' : (userInfo.isSuperuser ? 'superuser' : 'student'),
-      cntx_user_verified: userInfo.emailVerified || false
+      cntx_user_name: userInfo.userName || JITSI_CONFIG.FALLBACK_CONFIG.userName
     };
 
-    console.log('🚀 API URL:', JITSI_CONFIG.JITOK_API_URL);
+    console.log('🚀 Duy Tan API URL:', JITSI_CONFIG.JITOK_API_URL);
     console.log('📦 Payload (secret hidden):', {
       ...tokenPayload,
       secret: '[HIDDEN]'
     });
 
-    console.log('📡 Making API request to jitok...');
+    console.log('📡 Making API request to Duy Tan Universe...');
 
     const response = await fetch(JITSI_CONFIG.JITOK_API_URL, {
       method: 'POST',
@@ -179,9 +184,7 @@ export const createJitsiToken = async (courseInfo, userInfo) => {
     // Return null on error để fallback
     return null;
   }
-};
-
-// Helper function để tạo URL meet.jit.si với token
+};// Helper function để tạo URL meet.jit.si với token
 export const createJitsiMeetingUrl = (courseId, token) => {
   // Sanitize room name trước khi tạo URL
   const sanitizedRoomName = sanitizeRoomName(courseId);
