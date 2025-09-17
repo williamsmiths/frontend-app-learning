@@ -1,17 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useIntl } from "@edx/frontend-platform/i18n";
+import { getConfig } from "@edx/frontend-platform";
+
 import classNames from "classnames";
 
 import messages from "./messages";
 import Tabs from "../generic/tabs/Tabs";
 import { CoursewareSearch, CoursewareSearchToggle } from "../course-home/courseware-search";
 import { useCoursewareSearchState } from "../course-home/courseware-search/hooks";
+import { useModel } from "../generic/model-store";
+import { createJitsiToken, getUserInfo, createJitsiMeetingUrl } from "../shared/jitsi-service";
 
-const CourseTabsNavigation = ({ activeTabSlug, className, tabs }) => {
+const CourseTabsNavigation = ({ activeTabSlug, className, tabs, courseId }) => {
   const intl = useIntl();
+  const config = getConfig();
   const { show } = useCoursewareSearchState();
-  console.log("tabstabs", tabs);
+  const [isLoadingJitsiToken, setIsLoadingJitsiToken] = useState(false);
+
+  // Lấy thông tin khóa học từ model store
+  const courseInfo = useModel("courseHomeMeta", courseId);
+
+  // Log thông tin khóa học
+  console.log("=== COURSE INFORMATION ===");
+  console.log("Course ID:", courseId);
+  console.log("Course Info:", courseInfo);
+  console.log("Course Title:", courseInfo.title);
+  console.log("Course Org:", courseInfo.org);
+  console.log("Course Tabs:", tabs);
+  console.log("Config:", config);
+
+  // Log thông tin user từ JWT
+  const currentUserInfo = getUserInfo();
+  console.log("=== USER INFORMATION ===");
+  console.log("User Info:", currentUserInfo);
+  console.log("User ID:", currentUserInfo.userId);
+  console.log("Username:", currentUserInfo.username);
+  console.log("User Name:", currentUserInfo.userName);
+  console.log("Email:", currentUserInfo.email);
+  console.log("Is Admin:", currentUserInfo.isAdmin);
+  console.log("Is Superuser:", currentUserInfo.isSuperuser);
+  console.log("Email Verified:", currentUserInfo.emailVerified);
+  console.log("========================");
+
+  // Thêm course info vào window để có thể access từ console
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.currentCourseId = courseId;
+      window.currentCourseInfo = courseInfo;
+      window.currentUserInfo = currentUserInfo;
+      console.log("🧪 Course data available in window:");
+      console.log("- window.currentCourseId - Current course ID");
+      console.log("- window.currentCourseInfo - Current course info");
+      console.log("- window.currentUserInfo - Current user info");
+    }
+  }, [courseId, courseInfo, currentUserInfo]);
+
+  // Xử lý click vào Meeting link
+  const handleMeetingClick = async (e) => {
+    e.preventDefault();
+    setIsLoadingJitsiToken(true);
+
+    try {
+      console.log("=== CREATING JITSI TOKEN ===");
+
+      const userInfo = getUserInfo();
+      const courseData = {
+        courseId: courseId,
+        title: courseInfo.title || "Unknown Course",
+        org: courseInfo.org || "Unknown Org",
+      };
+
+      console.log("User Info:", userInfo);
+      console.log("Course Data for token:", courseData);
+
+      // Tạo token Jitsi
+      const token = await createJitsiToken(courseData, userInfo);
+      console.log("Generated Jitsi Token:", token);
+
+      console.log("============================");
+      // Tạo URL với token
+      const meetingUrl = createJitsiMeetingUrl(courseId, token);
+
+      console.log("Generated Meeting URL:", meetingUrl);
+      console.log("============================");
+
+      // Mở meeting trong tab mới
+      window.open(meetingUrl, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      console.error("Error handling meeting click:", error);
+      // Fallback: mở meeting không có token
+      const fallbackUrl = createJitsiMeetingUrl(courseId, null);
+      window.open(fallbackUrl, "_blank", "noopener,noreferrer");
+    } finally {
+      setIsLoadingJitsiToken(false);
+    }
+  };
 
   // Add custom styles for hover effects
   const customStyles = `
@@ -69,10 +153,15 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs }) => {
                 CaseStudy
               </a>
               <a
-                className={classNames("nav-item flex-shrink-0 nav-link")}
-                href="https://meet.jit.si/"
-                target="_blank"
-                rel="noopener noreferrer"
+                className={classNames("nav-item flex-shrink-0 nav-link", {
+                  disabled: isLoadingJitsiToken,
+                })}
+                href="#"
+                onClick={handleMeetingClick}
+                style={{
+                  cursor: isLoadingJitsiToken ? "wait" : "pointer",
+                  opacity: isLoadingJitsiToken ? 0.6 : 1,
+                }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +179,7 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs }) => {
                     strokeLinejoin="round"
                   />
                 </svg>
-                Meeting
+                {isLoadingJitsiToken ? "Creating Meeting..." : "Meeting"}
               </a>
             </Tabs>
           </div>
@@ -107,6 +196,7 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs }) => {
 CourseTabsNavigation.propTypes = {
   activeTabSlug: PropTypes.string,
   className: PropTypes.string,
+  courseId: PropTypes.string.isRequired,
   tabs: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
