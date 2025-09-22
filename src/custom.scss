@@ -66,6 +66,30 @@ $gray-100: #F3F4F6;
   color: #FFFFFF;
 }
 
+.btn-outline-primary {
+  color: #424242 !important;
+  border: none !important;
+}
+
+.btn-outline-primary:focus::before {
+  border: none !important;
+}
+
+.btn-outline-primary:not(:disabled, .disabled):active,
+.btn-outline-primary:not(:disabled, .disabled).active,
+.show>.btn-outline-primary.dropdown-toggle {
+  border: none !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: $primary-red !important;
+}
+
+.dropdown-menu.show {
+  padding: 10px !important;
+}
+
 .custom-navigation-btn {}
 
 .custom-explore-btn {
