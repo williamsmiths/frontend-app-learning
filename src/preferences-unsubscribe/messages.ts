@@ -3,27 +3,27 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   unsubscribeLoading: {
     id: 'learning.notification.preferences.unsubscribe.loading',
-    defaultMessage: 'Loading',
+    defaultMessage: 'Đang tải',
   },
   unsubscribeSuccessHeading: {
     id: 'learning.notification.preferences.unsubscribe.successHeading',
-    defaultMessage: 'Unsubscribe successful',
+    defaultMessage: 'Hủy đăng ký thành công',
   },
   unsubscribeSuccessMessage: {
     id: 'learning.notification.preferences.unsubscribe.successMessage',
-    defaultMessage: 'You have successfully unsubscribed from email digests for learning activity',
+    defaultMessage: 'Bạn đã hủy đăng ký nhận email tóm tắt về hoạt động học tập thành công',
   },
   unsubscribeFailedHeading: {
     id: 'learning.notification.preferences.unsubscribe.failedHeading',
-    defaultMessage: 'Error unsubscribing from preference',
+    defaultMessage: 'Lỗi khi hủy đăng ký tùy chọn',
   },
   unsubscribeFailedMessage: {
     id: 'learning.notification.preferences.unsubscribe.failedMessage',
-    defaultMessage: 'Invalid Url or token expired',
+    defaultMessage: 'URL không hợp lệ hoặc mã token đã hết hạn',
   },
   preferenceCenterUrl: {
     id: 'learning.notification.preferences.unsubscribe.preferenceCenterUrl',
-    defaultMessage: 'preferences page',
+    defaultMessage: 'trang tùy chọn',
   },
 });
 

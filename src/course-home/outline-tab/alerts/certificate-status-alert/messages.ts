@@ -3,21 +3,21 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   certStatusEarnedNotAvailableHeader: {
     id: 'cert.alert.earned.unavailable.header.v2',
-    defaultMessage: 'Your grade and certificate status will be available soon.',
+    defaultMessage: 'Điểm số và trạng thái chứng chỉ của bạn sẽ sớm có sẵn.',
     description: 'Header alerting the user that their certificate will be available soon.',
   },
   certStatusDownloadableHeader: {
     id: 'cert.alert.earned.ready.header',
-    defaultMessage: 'Congratulations! Your certificate is ready.',
+    defaultMessage: 'Chúc mừng! Chứng chỉ của bạn đã sẵn sàng.',
     description: 'Header alerting the user that their certificate is ready.',
   },
   certStatusNotPassingHeader: {
     id: 'cert.alert.notPassing.header',
-    defaultMessage: 'You are not yet eligible for a certificate',
+    defaultMessage: 'Bạn chưa đủ điều kiện để nhận chứng chỉ',
   },
   certStatusNotPassingButton: {
     id: 'cert.alert.notPassing.button',
-    defaultMessage: 'View grades',
+    defaultMessage: 'Xem điểm',
   },
 });
 
