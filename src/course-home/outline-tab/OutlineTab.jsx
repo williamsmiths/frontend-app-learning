@@ -163,7 +163,7 @@ const OutlineTab = () => {
                 <div className="col-12 p-0 mt-4 mb-1">
                   <div className='d-flex justify-content-between align-items-center'>
                     <div className='text-secondary-subtle'>
-                      Thông tin về khoá học
+                      Course information
                     </div>
                     <div>
                       <Button ref={expandButtonRef} variant="outline" className='custom-outline-btn' block onClick={() => { setExpandAll(!expandAll); }}>
