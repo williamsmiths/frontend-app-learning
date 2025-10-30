@@ -25,7 +25,7 @@ const CourseCompletion = () => {
                   height: '12px',
                 }}
               ></span>
-              Đã hoàn thành
+              Completed
             </div>
             <div className="d-flex align-items-center" style={{ gap: '1rem' }}>
               <span
@@ -35,7 +35,7 @@ const CourseCompletion = () => {
                   height: '12px',
                 }}
               ></span>
-              Chưa hoàn thành
+              Not completed
             </div>
           </div>
 
