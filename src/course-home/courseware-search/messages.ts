@@ -3,69 +3,69 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   searchOpenAction: {
     id: 'learn.coursewareSearch.openAction',
-    defaultMessage: 'Tìm kiếm trong khóa học này',
+    defaultMessage: 'Search within this course',
     description: 'Aria-label for a button that will pop up Courseware Search.',
   },
   contentSearchButton: {
     id: 'learn.coursewareSearch.contentSearchButton',
-    defaultMessage: 'Tìm kiếm nội dung',
+    defaultMessage: 'Content search',
     description: 'Text for a button that will pop up Courseware Search.',
   },
   searchSubmitLabel: {
     id: 'learn.coursewareSearch.submitLabel',
-    defaultMessage: 'Tìm kiếm',
+    defaultMessage: 'Search',
     description: 'Button label that will submit Courseware Search.',
   },
   searchClearAction: {
     id: 'learn.coursewareSearch.clearAction',
-    defaultMessage: 'Xóa tìm kiếm',
+    defaultMessage: 'Clear search',
     description: 'Button label that will the current Courseware Search input.',
   },
   searchCloseAction: {
     id: 'learn.coursewareSearch.closeAction',
-    defaultMessage: 'Đóng biểu mẫu tìm kiếm',
+    defaultMessage: 'Close the search form',
     description: 'Aria-label for a button that will close Courseware Search.',
   },
   searchModuleTitle: {
     id: 'learn.coursewareSearch.searchModuleTitle',
-    defaultMessage: 'Tìm kiếm khóa học này',
+    defaultMessage: 'Search this course',
     description: 'Title for the Courseware Search module.',
   },
   searchBarPlaceholderText: {
     id: 'learn.coursewareSearch.searchBarPlaceholderText',
-    defaultMessage: 'Tìm kiếm',
+    defaultMessage: 'Search',
     description: 'Placeholder text for the Courseware Search input control',
   },
   loading: {
     id: 'learn.coursewareSearch.loading',
-    defaultMessage: 'Đang tìm kiếm...',
+    defaultMessage: 'Searching...',
     description: 'Screen reader text to use on the spinner while the search is performing.',
   },
   searchResultsNone: {
     id: 'learn.coursewareSearch.searchResultsNone',
-    defaultMessage: 'Không tìm thấy kết quả nào.',
+    defaultMessage: 'No results found.',
     description: 'Text to show when the Courseware Search found no results matching the criteria.',
   },
   searchResultsLabel: {
     id: 'learn.coursewareSearch.searchResultsLabel',
-    defaultMessage: 'Kết quả cho "{keyword}":',
+    defaultMessage: 'Results for "{keyword}":',
     description: 'Text to show above the search results response list.',
   },
   searchResultsError: {
     id: 'learn.coursewareSearch.searchResultsError',
-    defaultMessage: 'Đã xảy ra lỗi trong quá trình tìm kiếm. Vui lòng thử lại sau vài phút. Nếu sự cố vẫn tiếp diễn, vui lòng liên hệ với đội hỗ trợ.',
+    defaultMessage: 'There was an error on the search process. Please try again in a few minutes. If the problem persists, please contact the support team.',
     description: 'Error message to show to the users when there\'s an error with the endpoint or the returned payload format.',
   },
 
   // These are translations for labeling the filters
   'filter:all': {
     id: 'learn.coursewareSearch.filter:all',
-    defaultMessage: 'Tất cả nội dung',
+    defaultMessage: 'All content',
     description: 'Label for the search results filter that shows all content (no filter).',
   },
   'filter:text': {
     id: 'learn.coursewareSearch.filter:text',
-    defaultMessage: 'Văn bản',
+    defaultMessage: 'Text',
     description: 'Label for the search results filter that shows results with text content.',
   },
   'filter:video': {
@@ -75,12 +75,12 @@ const messages = defineMessages({
   },
   'filter:sequence': {
     id: 'learn.coursewareSearch.filter:sequence',
-    defaultMessage: 'Phần',
+    defaultMessage: 'Section',
     description: 'Label for the search results filter that shows results with section content.',
   },
   'filter:other': {
     id: 'learn.coursewareSearch.filter:other',
-    defaultMessage: 'Khác',
+    defaultMessage: 'Other',
     description: 'Label for the search results filter that shows results with other content.',
   },
 });

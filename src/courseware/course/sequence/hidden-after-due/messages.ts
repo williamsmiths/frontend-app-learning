@@ -3,22 +3,22 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   header: {
     id: 'learn.hiddenAfterDue.header',
-    defaultMessage: 'Hạn nộp cho bài tập này đã qua.',
+    defaultMessage: 'The due date for this assignment has passed.',
     description: 'Shown when content of a course is longer available because due date passed',
   },
   description: {
     id: 'learn.hiddenAfterDue.description',
-    defaultMessage: 'Vì hạn nộp đã qua, bài tập này không còn khả dụng nữa.',
+    defaultMessage: 'Because the due date has passed, this assignment is no longer available.',
     description: 'It explain why the content is not available',
   },
   gradeAvailable: {
     id: 'learn.hiddenAfterDue.gradeAvailable',
-    defaultMessage: 'Nếu bạn đã hoàn thành bài tập này, điểm của bạn có sẵn trên {progressPage}.',
+    defaultMessage: 'If you have completed this assignment, your grade is available on the {progressPage}.',
     description: 'Text that precedes link that redirect to progress page',
   },
   progressPage: {
     id: 'learn.hiddenAfterDue.progressPage',
-    defaultMessage: 'trang tiến độ',
+    defaultMessage: 'progress page',
     description: 'This is the text for the link embedded in learn.hiddenAfterDue.gradeAvailable',
   },
 });

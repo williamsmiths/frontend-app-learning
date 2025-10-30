@@ -3,7 +3,7 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   completed: {
     id: 'learning.celebration.completed',
-    defaultMessage: 'Bạn vừa hoàn thành phần đầu tiên của khóa học.',
+    defaultMessage: 'You just completed the first section of your course.',
     description: 'Shown only once to leaner when they complete their first section',
   },
   congrats: {
@@ -13,37 +13,37 @@ const messages = defineMessages({
   },
   earned: {
     id: 'learning.celebration.earned',
-    defaultMessage: 'Bạn xứng đáng với thành quả này!',
+    defaultMessage: 'You earned it!',
     description: 'Shown below congrats messaging when leaner complete a goal',
   },
   emailSubject: {
     id: 'learning.celebration.emailSubject',
-    defaultMessage: "Tôi đang trên hành trình hoàn thành {title} trực tuyến với {platform}!",
+    defaultMessage: "I'm on my way to completing {title} online with {platform}!",
     description: 'Subject when sharing course progress via email',
   },
   forward: {
     id: 'learning.celebration.forward',
-    defaultMessage: 'Tiếp tục thôi',
+    defaultMessage: 'Keep going',
     description: 'Button to close celebration dialog and get back to course',
   },
   goalMet: {
     id: 'learning.celebration.goalMet',
-    defaultMessage: 'Bạn đã đạt được mục tiêu!',
+    defaultMessage: 'You met your goal!',
     description: 'Headline for (weekly gaol celebration) section in courseware',
   },
   keepItUp: {
     id: 'learning.celebration.keepItUp',
-    defaultMessage: 'Hãy giữ vững phong độ',
+    defaultMessage: 'Keep it up',
     description: 'Button to close celebration dialog and get back to course',
   },
   share: {
     id: 'learning.celebration.share',
-    defaultMessage: 'Hãy dành chút thời gian để ăn mừng và chia sẻ tiến trình học tập của bạn.',
+    defaultMessage: 'Take a moment to celebrate and share your progress.',
     description: 'Text that precedes the (sharing icon) for goal accomplishment ',
   },
   socialMessage: {
     id: 'learning.celebration.social',
-    defaultMessage: 'Tôi đang trên hành trình hoàn thành {title} trực tuyến với {platform}. Còn bạn, bạn đang học gì?',
+    defaultMessage: 'I’m on my way to completing {title} online with {platform}. What are you spending your time learning?',
     description: 'Shown when sharing course progress on a social network',
   },
 });

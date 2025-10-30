@@ -10,12 +10,10 @@ import { Alert } from '@openedx/paragon';
 import { Info } from '@openedx/paragon/icons';
 
 import { useModel } from '../../generic/model-store';
-import { useFormatDate } from './hooks';
 
 const DAY_SEC = 24 * 60 * 60; // in seconds
 const DAY_MS = DAY_SEC * 1000; // in ms
 const YEAR_SEC = 365 * DAY_SEC; // in seconds
-const formatDate = useFormatDate();
 
 const CourseStartAlert = ({ payload }) => {
   const {
@@ -30,34 +28,60 @@ const CourseStartAlert = ({ payload }) => {
   const timezoneFormatArgs = userTimezone ? { timeZone: userTimezone } : {};
 
   const delta = new Date(startDate) - new Date();
-  const timeRemaining = Math.ceil(delta / (1000 * 60 * 60 * 24));
+  const timeRemaining = (
+    <FormattedRelativeTime
+      key="timeRemaining"
+      value={delta / 1000}
+      numeric="auto"
+      // 1 year interval to help auto format. It won't format without updateIntervalInSeconds.
+      updateIntervalInSeconds={YEAR_SEC}
+      {...timezoneFormatArgs}
+    />
+  );
   if (delta < DAY_MS) {
     return (
       <Alert variant="info" icon={Info}>
         <FormattedMessage
           id="learning.outline.alert.start.short"
-          defaultMessage="Khóa học sẽ bắt đầu sau {timeRemaining} ngày nữa, vào lúc {courseStartTime}."
-          description="Thông báo khi thời gian bắt đầu khóa học còn dưới 1 ngày."
+          defaultMessage="Course starts {timeRemaining} at {courseStartTime}."
+          description="Used when the time remaining is less than a day away."
           values={{
-            courseStartDate: formatDate(startDate),
+            courseStartTime: (
+              <FormattedTime
+                key="courseStartTime"
+                day="numeric"
+                month="short"
+                year="numeric"
+                timeZoneName="short"
+                value={startDate}
+                {...timezoneFormatArgs}
+              />
+            ),
             timeRemaining,
           }}
         />
-
       </Alert>
     );
   }
-  console.log('timeRemaining', timeRemaining);
 
   return (
     <Alert variant="info" icon={Info}>
       <strong>
         <FormattedMessage
           id="learning.outline.alert.start.long"
-          defaultMessage="Khóa học sẽ bắt đầu sau {timeRemaining} ngày nữa, vào ngày {courseStartDate}."
-          description="Thông báo khi thời gian bắt đầu khóa học còn nhiều hơn một ngày."
+          defaultMessage="Course starts {timeRemaining} on {courseStartDate}."
+          description="Used when the time remaining is more than a day away."
           values={{
-            courseStartDate: formatDate(startDate),
+            courseStartDate: (
+              <FormattedDate
+                key="courseStartDate"
+                day="numeric"
+                month="short"
+                year="numeric"
+                value={startDate}
+                {...timezoneFormatArgs}
+              />
+            ),
             timeRemaining,
           }}
         />
@@ -65,8 +89,8 @@ const CourseStartAlert = ({ payload }) => {
       <br />
       <FormattedMessage
         id="learning.outline.alert.start.calendar"
-        defaultMessage="Đừng quên đặt nhắc nhở trên lịch!"
-        description="Khuyến nghị học viên đặt nhắc nhở cho ngày bắt đầu khóa học, hiển thị khi thời gian bắt đầu còn hơn 1 ngày."
+        defaultMessage="Don’t forget to add a calendar reminder!"
+        description="It's just a recommendation for learners to set a reminder for the course starting date and is shown when the course starting date is more than a day. "
       />
     </Alert>
   );

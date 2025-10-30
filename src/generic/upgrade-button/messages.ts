@@ -3,11 +3,11 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   srPrices: {
     id: 'learning.offer.screenReaderPrices', // historic id
-    defaultMessage: 'Giá gốc: {originalPrice}, giá giảm: {discountedPrice}',
+    defaultMessage: 'Original price: {originalPrice}, discount price: {discountedPrice}',
   },
   srInlinePrices: {
     id: 'learning.upgradeButton.screenReaderInlinePrices',
-    defaultMessage: 'Giá gốc: {originalPrice}',
+    defaultMessage: 'Original price: {originalPrice}',
   },
 });
 
