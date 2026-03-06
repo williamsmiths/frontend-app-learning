@@ -1,0 +1,12 @@
+@import "../../../custom.scss";
+
+.outline-sidebar-proctoring-panel {
+  border: 1px solid $dark-500;
+  border-top: 5px solid $brand-600;
+}
+.proctoring-onboarding-success {
+  border-top: 5px solid $primary-red;
+}
+.proctoring-onboarding-submitted {
+  border-top: 5px solid $dark-500;
+}

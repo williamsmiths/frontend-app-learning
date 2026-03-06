@@ -1,0 +1,19 @@
+@import "../../../../custom.scss";
+
+#course-sidebar {
+    @media (max-width: -1 + map-get($grid-breakpoints, "lg")) {
+        overflow-y: scroll;
+        padding: 0 .625rem !important;
+    }
+}
+
+.trigger-base-btn {
+    width: 44px;
+    height: 44px;
+    background: $gray-100 !important;
+    color: $gray-600 !important;
+    transition: all 0.25s ease;
+}
+.trigger-base-btn:hover {
+    color: $primary-red !important;
+}

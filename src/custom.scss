@@ -1,0 +1,199 @@
+$primary-red: #d32f2f;
+$primary-red-dark: #b71c1c;
+$primary-red-light: #ffcdd2;
+$primary-blue: #0065FD;
+$gray-100: #F3F4F6;
+
+.text-primary {
+  color: $primary-red !important;
+}
+
+.text-primary-red {
+  color: $primary-red !important;
+}
+
+.text-primary-red-dark {
+  color: $primary-red-dark !important;
+}
+
+.text-primary-red-light {
+  color: $primary-red-light !important;
+}
+
+.text-primary-blue {
+  color: $primary-blue !important;
+}
+
+.bg-gray-100 {
+  background-color: $gray-100 !important;
+}
+
+.bg-primary {
+  background-color: $primary-red !important;
+}
+
+.bg-primary-red {
+  background-color: $primary-red !important;
+}
+
+.bg-primary-red-dark {
+  background-color: $primary-red-dark !important;
+}
+
+.bg-primary-red-light {
+  background-color: $primary-red-light !important;
+}
+
+.bg-primary-blue {
+  background-color: $primary-blue !important;
+}
+
+.border-primary-red {
+  .trigger-base-btn {
+    color: $primary-red !important;
+  }
+}
+
+.btn-primary {
+  color: #FFFFFF;
+  background-color: $primary-red !important;
+  border-color: $primary-red !important;
+}
+
+.btn-primary:hover {
+  background-color: $primary-red-dark !important;
+  border-color: $primary-red-dark !important;
+  color: #FFFFFF;
+}
+
+.btn-outline-primary {
+  color: #424242 !important;
+  border: none !important;
+}
+
+.btn-outline-primary:focus::before {
+  border: none !important;
+}
+
+.btn-outline-primary:not(:disabled, .disabled):active,
+.btn-outline-primary:not(:disabled, .disabled).active,
+.show>.btn-outline-primary.dropdown-toggle {
+  border: none !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: $primary-red !important;
+}
+
+.dropdown-menu.show {
+  padding: 10px !important;
+}
+
+.custom-navigation-btn {}
+
+.custom-explore-btn {
+  background-color: $primary-red !important;
+  transition: all 0.25s ease;
+  color: #fff !important;
+  border-radius: 30px !important;
+  padding: 8px 24px !important;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  text-decoration: none !important;
+
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+
+  }
+}
+
+.custom-explore-btn:hover {
+  background-color: $primary-red-dark !important;
+}
+
+.custom-outline-btn {
+  transition: all 0.25s ease;
+  background-color: #fff !important;
+  border: 1px solid $primary-red !important;
+  color: $primary-red !important;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+
+  }
+}
+
+.custom-outline-btn:hover {
+  background-color: $primary-red !important;
+  color: #fff !important;
+}
+
+.custom-icon-filled {
+  background-color: #fff !important;
+}
+
+.custom-icon-filled:hover {
+  background-color: $gray-100 !important;
+  color: $primary-red !important;
+}
+
+.collapsible-trigger {
+  background-color: $gray-100 !important;
+}
+
+.custom-dropdown-toggle {
+  transition: all 0.25s ease;
+  color: $primary-red !important;
+  border: none !important;
+  outline: none !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.custom-dropdown-toggle:hover,
+.custom-dropdown-toggle:focus {
+  background: $primary-red !important;
+  color: #fff !important;
+}
+
+.custom-dropdown-item{
+  margin: 5px 0 !important;
+  &:hover,
+  &:focus {
+    background: $gray-100 !important;
+    color: $primary-red !important;
+  }
+}
+
+a.active.custom-dropdown-item.pgn__dropdown-item.dropdown-item {
+  background: $primary-red !important;
+  color: #fff !important;
+}
+
+
+.custom-group-progress {
+  border: 1px solid $gray-100 !important;
+  border-radius: 15px !important;
+}
+
+.pgn__checkpoint {
+  background: $gray-100 !important;
+  border-top-color: $primary-red !important;
+}
+
+.pgn__checkpoint .pgn__checkpoint-breadcrumb.pgn__checkpoint-breadcrumb_active {
+  background: $primary-red !important;
+}
