@@ -50,7 +50,7 @@ const CourseEndAlert = ({ payload }) => {
     msg = (
       <FormattedMessage
         id="learning.outline.alert.end.short"
-        defaultMessage="This course is ending {timeRemaining} at {courseEndTime}."
+        defaultMessage="Khóa học này sẽ kết thúc sau {timeRemaining} vào lúc {courseEndTime}."
         description="Used when the time remaining is less than a day away."
         values={{
           courseEndTime,
@@ -72,7 +72,7 @@ const CourseEndAlert = ({ payload }) => {
     msg = (
       <FormattedMessage
         id="learning.outline.alert.end.long"
-        defaultMessage="This course is ending {timeRemaining} on {courseEndDate}."
+        defaultMessage="Khóa học này sẽ kết thúc sau {timeRemaining} vào ngày {courseEndDate}."
         description="Used when the time remaining is more than a day away."
         values={{
           courseEndDate,

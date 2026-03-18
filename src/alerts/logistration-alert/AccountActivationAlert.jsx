@@ -45,7 +45,7 @@ const AccountActivationAlert = () => {
     >
       <FormattedMessage
         id="account-activation.alert.button"
-        defaultMessage="Continue to {siteName}"
+        defaultMessage="Tiếp tục đến {siteName}"
         description="account activation alert continue button"
         values={{
           siteName: getConfig().SITE_NAME,
@@ -60,8 +60,7 @@ const AccountActivationAlert = () => {
     const message = (
       <FormattedMessage
         id="account-activation.alert.message"
-        defaultMessage="We sent an email to {boldEmail} with a link to activate your account. Can’t find it? Check your spam folder or
-        {sendEmailTag}."
+        defaultMessage="Chúng tôi đã gửi một email đến {boldEmail} với liên kết để kích hoạt tài khoản của bạn. Không tìm thấy nó? Kiểm tra thư mục spam của bạn hoặc {sendEmailTag}."
         description="Message for account activation alert which is shown after the registration"
         values={{
           boldEmail: <b>{getAuthenticatedUser() && getAuthenticatedUser().email}</b>,
@@ -70,7 +69,7 @@ const AccountActivationAlert = () => {
             <a href="#" role="button" onClick={handleOnClick}>
               <FormattedMessage
                 id="account-activation.resend.link"
-                defaultMessage="resend the email"
+                defaultMessage="Gửi lại email"
                 description="Message for resend link in account activation alert which is shown after the registration"
               />
             </a>

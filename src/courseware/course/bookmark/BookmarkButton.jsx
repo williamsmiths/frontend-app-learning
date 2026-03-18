@@ -9,7 +9,7 @@ import { removeBookmark, addBookmark } from './data/thunks';
 const addBookmarkLabel = (
   <FormattedMessage
     id="unit.bookmark.button.add.bookmark"
-    defaultMessage="Bookmark this page"
+    defaultMessage="Đánh dấu trang này"
     description="The button to bookmark a page"
   />
 );
@@ -17,7 +17,7 @@ const addBookmarkLabel = (
 const hasBookmarkLabel = (
   <FormattedMessage
     id="unit.bookmark.button.remove.bookmark"
-    defaultMessage="Bookmarked"
+    defaultMessage="Đã đánh dấu"
     description="The button to show a page is bookmarked and the button to remove that bookmark"
   />
 );

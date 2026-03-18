@@ -21,7 +21,7 @@ const CourseStartMasqueradeBanner = ({ payload }) => {
     <PageBanner variant="warning">
       <FormattedMessage
         id="instructorToolbar.pageBanner.courseHasNotStarted"
-        defaultMessage="This learner does not yet have access to this course. The course starts on {date}."
+        defaultMessage="Học viên này chưa có quyền truy cập vào khóa học này. Khóa học bắt đầu vào ngày {date}."
         description="It's a warning that is shown to course author when being masqueraded as learner, while the course hasn't started for the real learner yet."
         values={{
           date: <FormattedDate

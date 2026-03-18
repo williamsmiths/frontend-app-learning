@@ -9,65 +9,65 @@ import {
 const datesCheckpoint = {
   body: <FormattedMessage
     id="tours.datesCheckpoint.body"
-    defaultMessage="Important dates can help you stay on track."
+    defaultMessage="Các mốc thời gian quan trọng có thể giúp bạn luôn đi đúng hướng."
   />,
   placement: 'left',
   target: '#courseHome-dates',
   title: <FormattedMessage
     id="tours.datesCheckpoint.title"
-    defaultMessage="Keep on top of key dates"
+    defaultMessage="Theo dõi các mốc thời gian quan trọng"
   />,
 };
 
 const outlineCheckpoint = {
   body: <FormattedMessage
     id="tours.outlineCheckpoint.body"
-    defaultMessage="You can explore sections of the course using the outline below."
+    defaultMessage="Bạn có thể khám phá các phần của khóa học bằng cách sử dụng dàn bài bên dưới."
   />,
   placement: 'top',
   target: '#courseHome-outline',
   title: <FormattedMessage
     id="tours.outlineCheckpoint.title"
-    defaultMessage="Take the course!"
+    defaultMessage="Khám phá khóa học!"
   />,
 };
 
 const tabNavigationCheckpoint = {
   body: <FormattedMessage
     id="tours.tabNavigationCheckpoint.body"
-    defaultMessage="These tabs can be used to access other course materials, such as your progress, syllabus, etc."
+    defaultMessage="Các tab này có thể được sử dụng để truy cập các tài liệu khóa học khác, chẳng hạn như tiến độ của bạn, đề cương, v.v."
   />,
   placement: 'bottom',
   target: '#courseTabsNavigation',
   title: <FormattedMessage
     id="tours.tabNavigationCheckpoint.title"
-    defaultMessage="Additional course resources"
+    defaultMessage="Tài liệu khóa học bổ sung"
   />,
 };
 
 const upgradeCheckpoint = {
   body: <FormattedMessage
     id="tours.upgradeCheckpoint.body"
-    defaultMessage="Work towards a certificate and gain full access to course materials. Upgrade now!"
+    defaultMessage="Hướng tới một chứng chỉ và có được quyền truy cập đầy đủ vào tài liệu khóa học. Nâng cấp ngay!"
   />,
   placement: 'left',
   target: '#courseHome-upgradeNotification',
   title: <FormattedMessage
     id="tours.upgradeCheckpoint.title"
-    defaultMessage="Unlock your course"
+    defaultMessage="Mở khóa khóa học của bạn"
   />,
 };
 
 const weeklyGoalsCheckpoint = {
   body: <FormattedMessage
     id="tours.weeklyGoalsCheckpoint.body"
-    defaultMessage="Setting a goal makes you more likely to complete your course."
+    defaultMessage="Đặt mục tiêu giúp bạn có khả năng hoàn thành khóa học cao hơn."
   />,
   placement: 'left',
   target: '#courseHome-weeklyLearningGoal',
   title: <FormattedMessage
     id="tours.weeklyGoalsCheckpoint.title"
-    defaultMessage="Set a course goal"
+    defaultMessage="Đặt mục tiêu cho khóa học"
   />,
 };
 

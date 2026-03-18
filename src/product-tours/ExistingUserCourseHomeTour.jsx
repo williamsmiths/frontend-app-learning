@@ -7,7 +7,7 @@ const existingUserCourseHomeTour = ({ enabled, onEnd }) => ({
   checkpoints: [{
     body: <FormattedMessage
       id="tours.existingUserTour.launchTourCheckpoint.body"
-      defaultMessage="We’ve recently added a few new features to the course experience. Want some help looking around? Take a tour to learn more."
+      defaultMessage="Chúng tôi vừa bổ sung một vài tính năng mới cho trải nghiệm khóa học. Bạn cần hỗ trợ để làm quen? Hãy tham gia chuyến tham quan để tìm hiểu thêm."
     />,
     placement: 'left',
     target: '#courseHome-launchTourLink',

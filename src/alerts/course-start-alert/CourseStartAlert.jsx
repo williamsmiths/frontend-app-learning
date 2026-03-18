@@ -43,7 +43,7 @@ const CourseStartAlert = ({ payload }) => {
       <Alert variant="info" icon={Info}>
         <FormattedMessage
           id="learning.outline.alert.start.short"
-          defaultMessage="Course starts {timeRemaining} at {courseStartTime}."
+         defaultMessage="Khóa học bắt đầu sau {timeRemaining}, lúc {courseStartTime}."
           description="Used when the time remaining is less than a day away."
           values={{
             courseStartTime: (
@@ -69,7 +69,7 @@ const CourseStartAlert = ({ payload }) => {
       <strong>
         <FormattedMessage
           id="learning.outline.alert.start.long"
-          defaultMessage="Course starts {timeRemaining} on {courseStartDate}."
+          defaultMessage="Khóa học bắt đầu sau {timeRemaining}, vào ngày {courseStartDate}."
           description="Used when the time remaining is more than a day away."
           values={{
             courseStartDate: (
@@ -89,7 +89,7 @@ const CourseStartAlert = ({ payload }) => {
       <br />
       <FormattedMessage
         id="learning.outline.alert.start.calendar"
-        defaultMessage="Don’t forget to add a calendar reminder!"
+        defaultMessage="Đừng quên thêm lời nhắc vào lịch của bạn!"
         description="It's just a recommendation for learners to set a reminder for the course starting date and is shown when the course starting date is more than a day. "
       />
     </Alert>

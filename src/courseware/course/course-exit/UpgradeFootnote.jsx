@@ -44,7 +44,7 @@ const UpgradeFootnote = ({ deadline, href }) => {
       text={(
         <FormattedMessage
           id="courseExit.upgradeFootnote"
-          defaultMessage="Access to this course and its materials are available on your dashboard until {expirationDate}. To extend access, {upgradeLink}."
+          defaultMessage="Quyền truy cập vào khóa học này và tài liệu của khóa học sẽ có sẵn trên bảng điều khiển của bạn cho đến ngày {expirationDate}. Để gia hạn quyền truy cập, hãy sử dụng {upgradeLink}."
           values={{
             expirationDate,
             upgradeLink,

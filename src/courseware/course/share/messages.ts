@@ -3,22 +3,22 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   shareButton: {
     id: 'learn.sequence.share.button',
-    defaultMessage: 'Share this content',
+    defaultMessage: 'Chia sẻ nội dung này',
     description: 'share message button message',
   },
   shareModalTitle: {
     id: 'learn.sequence.share.modal.title',
-    defaultMessage: 'Title',
+    defaultMessage: 'Tiêu đề',
     description: 'share message modal title',
   },
   shareModalBody: {
     id: 'learn.sequence.share.modal.body',
-    defaultMessage: 'Copy the link below to share this content.',
+    defaultMessage: 'Sao chép liên kết bên dưới để chia sẻ nội dung này.',
     description: 'share message modal body',
   },
   shareQuote: {
     id: 'learn.sequence.share.quote',
-    defaultMessage: 'Here\'s a fun clip from a class I\'m taking on @edXonline.\n',
+    defaultMessage: 'Đây là một đoạn thú vị từ lớp học tôi đang tham gia trên @edXonline.\n',
     description: 'share message quote',
   },
 });

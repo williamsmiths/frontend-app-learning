@@ -23,31 +23,30 @@ const messages = defineMessages({
   recommendationsHeading: {
     id: 'courseCelebration.recommendations.heading',
     description: 'Header for recommendations section of course celebration',
-    defaultMessage: 'Keep building your skills with these courses!',
+    defaultMessage: 'Tiếp tục phát triển kỹ năng của bạn với các khóa học này!',
   },
   recommendationsCourseFooter: {
-    id: 'courseCelebration.recommendations.label', // not very descriptive, but is historical
+    id: 'courseCelebration.recommendations.label',
     description: 'Label on a discovery-card that lets a user know that it is a course card',
-    defaultMessage: 'Course',
+    defaultMessage: 'Khóa học',
   },
   listJoin: {
     id: 'courseCelebration.recommendations.formatting.list_join',
     description: 'Joining mark or word for a list of items, use the {sp} placeholder to include space before the joining word',
-    // eslint-disable-next-line prefer-template
     defaultMessage: ('{style, select, '
-      + 'punctuation {, } ' // HACK: select keys must match ListStyles, above, but must be statically coded for extract
-      + 'conjunction { {sp}and } ' // HACK: interpolating a space character to get a leading-space here
+      + 'punctuation {, } '
+      + 'conjunction { {sp}và } '
       + 'other { }}'),
   },
   browseCatalog: {
     id: 'courseCelebration.recommendations.browse_catalog',
     description: 'Link to course catalog in course celebration',
-    defaultMessage: 'Explore more courses',
+    defaultMessage: 'Khám phá thêm các khóa học',
   },
   loadingRecommendations: {
     id: 'courseCelebration.recommendations.loading_recommendations',
     description: 'Screen-reader text for the loading screen for recommendations',
-    defaultMessage: 'Loading recommendations',
+    defaultMessage: 'Đang tải các đề xuất',
   },
 });
 
@@ -83,7 +82,7 @@ const CourseCard = ({
     <FormattedMessage
       id="courseCelebration.recommendations.card.schools.label"
       description="Screenreader label for the Schools and Partners running the course."
-      defaultMessage="Schools and Partners"
+      defaultMessage="Các trường và đối tác"
     >{text => (
       <>
         <span className="sr-only">{text}: </span>

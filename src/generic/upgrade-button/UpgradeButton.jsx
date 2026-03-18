@@ -27,7 +27,7 @@ const UpgradeButton = (props) => {
       <div>
         <FormattedMessage
           id="learning.upgradeButton.buttonText"
-          defaultMessage="Upgrade for {pricing}"
+          defaultMessage="Nâng cấp với {pricing}"
           values={{
             pricing: (
               <FormattedPricing

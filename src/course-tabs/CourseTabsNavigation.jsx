@@ -139,11 +139,11 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs, courseId }) => {
   const customStyles = `
     <style>
       .nav-link:hover {
-        color: #d32f2f !important;
+        color: #04549F !important;
         background-color: #F3F4F6 !important;
       }
       .nav-link:hover svg {
-        color: #d32f2f !important;
+        color: #04549F !important;
       }
     </style>
   `;

@@ -82,7 +82,7 @@ const Calculator = () => {
               </Collapsible.Visible>
               <FormattedMessage
                 id="calculator.instructions.button.label"
-                defaultMessage="Calculator Instructions"
+                defaultMessage="Hướng dẫn sử dụng máy tính"
               />
             </Collapsible.Trigger>
           </div>
@@ -90,14 +90,14 @@ const Calculator = () => {
             <FormattedMessage
               tagName="h6"
               id="calculator.instructions"
-              defaultMessage="For detailed information, see the {expressions_link}."
+              defaultMessage="Để biết thông tin chi tiết, hãy xem {expressions_link}."
               description="Text that precedes the link which redirects to help page calculator"
               values={{
                 expressions_link: (
                   <a href={getConfig().SUPPORT_URL_CALCULATOR_MATH}>
                     <FormattedMessage
                       id="calculator.instructions.support.title"
-                      defaultMessage="Help Center"
+                      defaultMessage="Trung tâm trợ giúp"
                       description="Anchor text for link which redirects to help page calculator"
                     />
                   </a>
@@ -108,7 +108,7 @@ const Calculator = () => {
               <strong>
                 <FormattedMessage
                   id="calculator.instructions.useful.tips"
-                  defaultMessage="Useful tips:"
+                  defaultMessage="Mẹo hữu ích:"
                   description="Headline for the (list of tips) about using the calculator"
                 />
               </strong>
@@ -117,34 +117,34 @@ const Calculator = () => {
               <li className="hint-item" id="hint-paren">
                 <FormattedMessage
                   id="calculator.hint1"
-                  defaultMessage="Use parentheses () to make expressions clear. You can use parentheses inside other parentheses."
+                  defaultMessage="Sử dụng dấu ngoặc () để làm rõ biểu thức. Bạn có thể sử dụng dấu ngoặc bên trong dấu ngoặc khác."
                   description="The text indicate that the calculator supports parentheses"
                 />
               </li>
               <li className="hint-item" id="hint-spaces">
                 <FormattedMessage
                   id="calculator.hint2"
-                  defaultMessage="Do not use spaces in expressions."
+                  defaultMessage="Không sử dụng khoảng trắng trong biểu thức."
                   description="It indicate that using a space might cause un expected behavior"
                 />
               </li>
               <li className="hint-item" id="hint-howto-constants">
                 <FormattedMessage
                   id="calculator.hint3"
-                  defaultMessage="For constants, indicate multiplication explicitly (example: 5*c)."
+                  defaultMessage="Đối với các hằng số, hãy chỉ định phép nhân một cách rõ ràng (ví dụ: 5*c)."
                   description="It indicate the style of math notation"
                 />
               </li>
               <li className="hint-item" id="hint-howto-maffixes">
                 <FormattedMessage
                   id="calculator.hint4"
-                  defaultMessage="For affixes, type the number and affix without a space (example: 5c)."
+                  defaultMessage="Đối với các tiền tố, hãy nhập số và tiền tố mà không có khoảng trắng (ví dụ: 5c)."
                 />
               </li>
               <li className="hint-item" id="hint-howto-functions">
                 <FormattedMessage
                   id="calculator.hint5"
-                  defaultMessage="For functions, type the name of the function, then the expression in parentheses."
+                  defaultMessage="Đối với các hàm, hãy nhập tên hàm, sau đó là biểu thức trong dấu ngoặc."
                   description="It indicate how to use a math function, e.g. exp(4)."
                 />
               </li>
@@ -155,21 +155,21 @@ const Calculator = () => {
                   <th scope="col">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.heading"
-                      defaultMessage="To Use"
+                      defaultMessage="Cách sử dụng"
                       description="Column header which indicate  calculator functionality"
                     />
                   </th>
                   <th scope="col">
                     <FormattedMessage
                       id="calculator.instruction.table.type.heading"
-                      defaultMessage="Type"
+                      defaultMessage="Loại"
                       description="Column header which indicate the supported type(s) of a the calculator functionality"
                     />
                   </th>
                   <th scope="col">
                     <FormattedMessage
                       id="calculator.instruction.table.examples.heading"
-                      defaultMessage="Examples"
+                      defaultMessage="Ví dụ"
                       description="Column header which list examples of  calculator functionality"
                     />
                   </th>
@@ -180,7 +180,7 @@ const Calculator = () => {
                   <th scope="row">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.numbers"
-                      defaultMessage="Numbers"
+                      defaultMessage="Số"
                       description="A calculator functionality"
                     />
                   </th>
@@ -189,21 +189,21 @@ const Calculator = () => {
                       <li>
                         <FormattedMessage
                           id="calculator.instruction.table.to.use.numbers.type1"
-                          defaultMessage="Integers"
+                          defaultMessage="Số nguyên"
                           description="Type of numbers that is supported the calculator"
                         />
                       </li>
                       <li>
                         <FormattedMessage
                           id="calculator.instruction.table.to.use.numbers.type2"
-                          defaultMessage="Fractions"
+                          defaultMessage="Phân số"
                           description="Type of numbers that is supported by the calculator"
                         />
                       </li>
                       <li>
                         <FormattedMessage
                           id="calculator.instruction.table.to.use.numbers.type3"
-                          defaultMessage="Decimals"
+                          defaultMessage="Số thập phân"
                           description="Type of numbers that is supported by the calculator"
                         />
                       </li>
@@ -221,7 +221,7 @@ const Calculator = () => {
                   <th scope="row">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.operators"
-                      defaultMessage="Operators"
+                      defaultMessage="Toán tử"
                       description="A calculator functionality"
                     />
                   </th>
@@ -231,7 +231,7 @@ const Calculator = () => {
                         {' + - * / '}
                         <FormattedMessage
                           id="calculator.instruction.table.to.use.operators.type1"
-                          defaultMessage="(add, subtract, multiply, divide)"
+                          defaultMessage="(cộng, trừ, nhân, chia)"
                           description="Type of opprators that are supported by the calculator"
                         />
                       </li>
@@ -239,7 +239,7 @@ const Calculator = () => {
                         {'^ '}
                         <FormattedMessage
                           id="calculator.instruction.table.to.use.operators.type2"
-                          defaultMessage="(raise to a power)"
+                          defaultMessage="(lũy thừa)"
                           description="It indicate that symbol (^) is being used to raise power, e.g. 2^2 = 4"
                         />
                       </li>
@@ -247,7 +247,7 @@ const Calculator = () => {
                         {'|| '}
                         <FormattedMessage
                           id="calculator.instruction.table.to.use.operators.type3"
-                          defaultMessage="(parallel resistors)"
+                          defaultMessage="(điện trở song song)"
                           description="It indicate that the sympol (||) is being used to calculate (parallel resistor), it is a concept in electrical/electronic engineering"
                         />
                       </li>
@@ -266,7 +266,7 @@ const Calculator = () => {
                   <th scope="row">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.constants"
-                      defaultMessage="Constants"
+                      defaultMessage="Hằng số"
                       description="It indicate that the calculator support constants, e.g. the speed of light"
                     />
                   </th>
@@ -282,13 +282,13 @@ const Calculator = () => {
                   <th scope="row">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.affixes"
-                      defaultMessage="Affixes"
+                      defaultMessage="Tiền tố và hậu tố"
                     />
                   </th>
                   <td dir="auto">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.affixes.type"
-                      defaultMessage="Percent sign (%)"
+                      defaultMessage="Dấu phần trăm (%)"
                     />
                   </td>
                   <td dir="auto">
@@ -301,7 +301,7 @@ const Calculator = () => {
                   <th scope="row">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.basic.functions"
-                      defaultMessage="Basic functions"
+                      defaultMessage="Các hàm cơ bản"
                       description="It indicate that calculator supports mathematical function"
                     />
                   </th>
@@ -317,7 +317,7 @@ const Calculator = () => {
                   <th scope="row">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.trig.functions"
-                      defaultMessage="Trigonometric functions"
+                      defaultMessage="Các hàm lượng giác"
                       description="Type of mathematical function that is supported by the calculator"
                     />
                   </th>
@@ -338,14 +338,14 @@ const Calculator = () => {
                   <th scope="row">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.scientific.notation"
-                      defaultMessage="Scientific notation"
+                      defaultMessage="Ký hiệu khoa học"
                       description="It indicate that calculator supports scientific notation"
                     />
                   </th>
                   <td dir="auto">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.scientific.notation.type1"
-                      defaultMessage="{exponentSyntax} and the exponent"
+                      defaultMessage="{exponentSyntax} và số mũ"
                       description="Type of scientific notation that is  supported by the calculator"
                       values={{
                         exponentSyntax: '10^',
@@ -358,7 +358,7 @@ const Calculator = () => {
                   <th scope="row">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.scientific.notation.type2"
-                      defaultMessage="{notationSyntax} notation"
+                      defaultMessage="{notationSyntax} ký hiệu"
                       description="It indicate that calculator supports (e) to be used in notation"
                       values={{
                         notationSyntax: 'e',
@@ -368,7 +368,7 @@ const Calculator = () => {
                   <td dir="auto">
                     <FormattedMessage
                       id="calculator.instruction.table.to.use.scientific.notation.type3"
-                      defaultMessage="{notationSyntax} and the exponent"
+                      defaultMessage="{notationSyntax} và số mũ"
                       description="An example for using (e) in notation"
                       values={{
                         notationSyntax: '1e',

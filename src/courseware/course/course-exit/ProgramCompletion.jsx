@@ -48,7 +48,7 @@ const ProgramCompletion = ({
           <p>
             <FormattedMessage
               id="courseExit.programCompletion.dashboardMessage"
-              defaultMessage="To view your certificate status, check the Programs section of your {programLink}."
+              defaultMessage="Để xem trạng thái chứng chỉ của bạn, hãy kiểm tra mục Chương trình trong {programLink} của bạn."
               values={{ programLink }}
               description="Text that precedes link to program page"
             />

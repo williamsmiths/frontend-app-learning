@@ -129,8 +129,7 @@ const CourseCelebration = () => {
           <p>
             <FormattedMessage
               id="courseCelebration.certificateBody.notAvailable.endDate.v2"
-              defaultMessage="This course ends on {endDate}. Final grades and any earned certificates are
-              scheduled to be available after {certAvailableDate}."
+              defaultMessage="Khóa học này kết thúc vào ngày {endDate}. Điểm cuối kỳ và bất kỳ chứng chỉ nào đã đạt được dự kiến ​​sẽ có sau ngày {certAvailableDate}."
               values={{ endDate, certAvailableDate }}
               description="This shown for leaner when they are eligible for certifcate but it't not available yet, it could because leaners just finished the course quickly!"
             />
@@ -179,8 +178,8 @@ const CourseCelebration = () => {
           <p>
             <FormattedMessage
               id="courseCelebration.certificateBody.unverified"
-              defaultMessage="In order to generate a certificate, you must complete ID verification.
-                {idVerificationSupportLink} now."
+              defaultMessage="Để tạo chứng chỉ, bạn phải hoàn thành xác minh danh tính.
+                {idVerificationSupportLink} ngay."
               values={{ idVerificationSupportLink }}
               description="Its shown when learner are not verified thus it recommends going over the verification process"
             />
@@ -196,10 +195,7 @@ const CourseCelebration = () => {
           <p>
             <FormattedMessage
               id="courseCelebration.certificateBody.upgradable"
-              defaultMessage="It’s not too late to upgrade. For {price} you will unlock access to all graded
-                assignments in this course. Upon completion, you will receive a verified certificate which is a
-                valuable credential to improve your job prospects and advance your career, or highlight your
-                certificate in school applications."
+              defaultMessage="Vẫn chưa quá muộn để nâng cấp. Với giá {price}, bạn sẽ mở khóa quyền truy cập vào tất cả các bài tập được chấm điểm trong khóa học này. Sau khi hoàn thành, bạn sẽ nhận được chứng chỉ được xác nhận, một chứng chỉ có giá trị giúp cải thiện triển vọng việc làm và thăng tiến trong sự nghiệp, hoặc làm nổi bật chứng chỉ của bạn trong hồ sơ xin học."
               values={{ price: <FormattedPricing inline offer={offer} verifiedMode={verifiedMode} /> }}
               description="Body text when the learner needs to upgrade to earn a certifcate and they have passed the course"
             />
@@ -224,7 +220,7 @@ const CourseCelebration = () => {
             <span className="ml-2 align-middle">
               <FormattedMessage
                 id="courseCelebration.upgradeDiscountCodePrompt"
-                defaultMessage="Use code {code} at checkout for {percent}% off!"
+                defaultMessage="Sử dụng mã {code} khi thanh toán để được giảm giá {percent}%!"
                 values={{
                   code: (<b>{offer.code}</b>),
                   percent: offer.percentage,

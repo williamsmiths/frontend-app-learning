@@ -15,12 +15,12 @@ const ScheduledContentAlert = ({ payload }) => {
           <Alert.Heading>
             <FormattedMessage
               id="learning.outline.alert.scheduled-content.heading"
-              defaultMessage="More content is coming soon!"
+              defaultMessage="Nội dung khác sẽ sớm được cập nhật."
             />
           </Alert.Heading>
           <FormattedMessage
             id="learning.outline.alert.scheduled-content.body"
-            defaultMessage="This course will have more content released at a future date. Look out for email updates or check back on this course for updates."
+            defaultMessage="Khóa học này sẽ có thêm nội dung được phát hành vào một ngày trong tương lai. Hãy chú ý đến các cập nhật qua email hoặc quay lại khóa học này để biết thêm thông tin."
           />
         </div>
         <div className="flex-grow-0 pt-3 pt-lg-0">
@@ -30,7 +30,7 @@ const ScheduledContentAlert = ({ payload }) => {
             >
               <FormattedMessage
                 id="learning.outline.alert.scheduled-content.button"
-                defaultMessage="View Course Schedule"
+                defaultMessage="Xem lịch khóa học"
               />
             </Button>
           )}

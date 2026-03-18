@@ -3,37 +3,37 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   contactSupport: {
     id: 'learning.goals.unsubscribe.contact',
-    defaultMessage: 'contact support',
+    defaultMessage: 'liên hệ hỗ trợ',
     description: 'Its shown as a suggestion or recommendation for learner when their unsubscribing request has failed',
   },
   description: {
     id: 'learning.goals.unsubscribe.description',
-    defaultMessage: 'You will no longer receive email reminders about your goal for {courseTitle}.',
+    defaultMessage: 'Bạn sẽ không còn nhận email nhắc nhở về mục tiêu của mình cho {courseTitle}.',
     description: 'It describes the consequences to learner when they unsubscribe of goal reminder service',
   },
   errorHeader: {
     id: 'learning.goals.unsubscribe.errorHeader',
-    defaultMessage: 'Something went wrong',
+    defaultMessage: 'Đã xảy ra lỗi',
     description: 'It indicate that the unsubscribing request has failed',
   },
   errorDescription: {
     id: 'learning.goals.unsubscribe.errorDescription',
-    defaultMessage: 'We were unable to unsubscribe you from goal reminder emails. Please try again later or {contactSupport} for help.',
+    defaultMessage: 'Chúng tôi không thể hủy đăng ký email nhắc nhở mục tiêu của bạn. Vui lòng thử lại sau hoặc {contactSupport} để được hỗ trợ.',
     description: 'Message that notifies user that unsubscribing failed and to try again',
   },
   goToDashboard: {
     id: 'learning.goals.unsubscribe.goToDashboard',
-    defaultMessage: 'Go to dashboard',
+    defaultMessage: 'Đi đến bảng điều khiển',
     description: 'Anchor text for button that redirects to dashboard page',
   },
   header: {
     id: 'learning.goals.unsubscribe.header',
-    defaultMessage: 'You’ve unsubscribed from goal reminders',
+    defaultMessage: 'Bạn đã hủy đăng ký nhận nhắc nhở mục tiêu',
     description: 'It indicate that the unsubscribing request was successful',
   },
   loading: {
     id: 'learning.goals.unsubscribe.loading',
-    defaultMessage: 'Unsubscribing…',
+    defaultMessage: 'Đang hủy đăng ký…',
     description: 'Message shown when the unsubscribing request is processing',
   },
 });

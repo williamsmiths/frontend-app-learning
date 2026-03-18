@@ -45,7 +45,7 @@ const AccessExpirationAlert = ({ payload }) => {
         <br />
         <FormattedMessage
           id="learning.accessExpiration.deadline"
-          defaultMessage="Upgrade by {date} to get unlimited access to the course as long as it exists on the site."
+          defaultMessage="Nâng cấp trước ngày {date} để có quyền truy cập không giới hạn vào khóa học miễn là khóa học còn trên trang web."
           description="Warning shown to learner to upgrade while they are enrolled on the audit version and it's possible to upgrade"
           values={{
             date: (
@@ -78,7 +78,7 @@ const AccessExpirationAlert = ({ payload }) => {
       <span className="font-weight-bold">
         <FormattedMessage
           id="learning.accessExpiration.header"
-          defaultMessage="Audit Access Expires {date}"
+          defaultMessage="Hết hạn truy cập Audit {date}"
           description="Headline for auditing deadline"
           values={{
             date: (
@@ -97,7 +97,7 @@ const AccessExpirationAlert = ({ payload }) => {
       <br />
       <FormattedMessage
         id="learning.accessExpiration.body"
-        defaultMessage="You lose all access to this course, including your progress, on {date}."
+        defaultMessage="Bạn sẽ mất quyền truy cập vào khóa học này, bao gồm cả tiến trình của bạn, vào {date}."
         description="Message body to tell learner the consequences of course expiration."
         values={{
           date: (

@@ -3,13 +3,13 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   failure: {
     id: 'learning.loading.failure',
-    defaultMessage: 'There was an error loading this course.',
-    description: 'Can be because internet connection or any technical other reason',
+    defaultMessage: 'Đã xảy ra lỗi khi tải khóa học này.',
+    description: 'Có thể do kết nối internet hoặc bất kỳ lý do kỹ thuật nào khác',
   },
   loading: {
     id: 'learning.loading',
-    defaultMessage: 'Loading course page…',
-    description: 'When content of the course is still loading...etc',
+    defaultMessage: 'Đang tải trang khóa học…',
+    description: 'Khi nội dung khóa học vẫn đang được tải...',
   },
 });
 

@@ -123,7 +123,7 @@ const CertificateStatus = () => {
           body = (
             <FormattedMessage
               id="progress.certificateStatus.unverifiedBody"
-              defaultMessage="In order to generate a certificate, you must complete ID verification. {idVerificationSupportLink}."
+              defaultMessage="Để tạo chứng chỉ, bạn phải hoàn tất xác minh danh tính. {idVerificationSupportLink}."
               description="Its shown when learner are not verified thus it recommends going over the verification process"
               values={{ idVerificationSupportLink }}
             />
@@ -140,9 +140,8 @@ const CertificateStatus = () => {
           <FormattedMessage
             id="progress.certificateStatus.downloadableBody"
             defaultMessage="
-              Showcase your accomplishment on LinkedIn or your resumé today.
-              You can download your certificate now and access it any time from your
-              {dashboardLink} and {profileLink}."
+              Hãy thể hiện thành tích của bạn trên LinkedIn hoặc sơ yếu lý lịch ngay hôm nay. 
+              Bạn có thể tải xuống chứng chỉ của mình ngay bây giờ và truy cập bất cứ lúc nào từ {dashboardLink} và {profileLink}"
             description="Recommending an action for learner when course certificate is available"
             values={{ dashboardLink, profileLink }}
           />
@@ -161,8 +160,8 @@ const CertificateStatus = () => {
         body = (
           <FormattedMessage
             id="progress.certificateStatus.notAvailable.endDate"
-            defaultMessage="This course ends on {endDate}. Final grades and any earned certificates are
-            scheduled to be available after {certAvailabilityDate}."
+            defaultMessage="Khóa học này sẽ kết thúc vào {endDate}. Điểm cuối cùng và bất kỳ chứng chỉ nào đã đạt được sẽ được
+            dự kiến sẽ có sẵn sau {certAvailabilityDate}."
             description="This shown for leaner when they are eligible for certifcate but it't not available yet, it could because leaners just finished the course quickly!"
             values={{ endDate, certAvailabilityDate }}
           />

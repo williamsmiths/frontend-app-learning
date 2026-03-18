@@ -43,7 +43,7 @@ const WeeklyGoalCelebrationModal = ({
         <div className="text-center px-3">
           <FormattedMessage
             id="learning.celebration.goalCongrats"
-            defaultMessage="Congratulations, you met your learning goal of {nTimes} a week."
+            defaultMessage="Chúc mừng, bạn đã đạt được mục tiêu học tập {nTimes} mỗi tuần."
             description="Greeting for learners for their weekly goal, it as well indicate their gaol, i.e. (1,3 or 5 time(s) a week)"
             values={{
               nTimes: (<strong>{daysPerWeek} {daysPerWeek === 1 ? 'time' : 'times'}</strong>),
@@ -62,10 +62,10 @@ const WeeklyGoalCelebrationModal = ({
           <div>
             <FormattedMessage
               id="learning.celebration.setGoal"
-              defaultMessage="Setting a goal can help you {strongText} in your course."
+              defaultMessage="Đặt mục tiêu có thể giúp bạn {strongText} trong khóa học của mình."
               description="It explain the advantages of setting goal"
               values={{
-                strongText: (<strong>achieve higher performance</strong>),
+                strongText: (<strong>đạt được hiệu suất cao hơn</strong>),
               }}
             />
           </div>

@@ -72,7 +72,7 @@ const CourseBreadcrumbs = ({
             <FormattedMessage
               id="learn.breadcrumb.navigation.course.home"
               description="The course home link in breadcrumbs nav"
-              defaultMessage="Course"
+              defaultMessage="Khóa học"
             />
           </Link>
         </li>

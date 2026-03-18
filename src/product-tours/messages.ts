@@ -3,27 +3,27 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   beginTour: {
     id: 'tours.button.beginTour',
-    defaultMessage: 'Begin tour',
-    description: 'A button used to start a tour of the website',
+    defaultMessage: 'Bắt đầu tour',
+    description: 'Nút dùng để bắt đầu một chuyến tham quan website',
   },
   launchTour: {
     id: 'tours.button.launchTour',
-    defaultMessage: 'Launch tour',
-    description: 'A button used to launch a tour of the website',
+    defaultMessage: 'Khởi chạy tour',
+    description: 'Nút dùng để khởi chạy một chuyến tham quan website',
   },
   newUserModalBody: {
     id: 'tours.newUserModal.body',
-    defaultMessage: 'Let’s take a quick tour of {siteName} so you can get the most out of your course.',
+    defaultMessage: 'Hãy cùng tham quan nhanh {siteName} để bạn tận dụng tối đa khóa học của mình.',
   },
   newUserModalTitleWelcome: {
     id: 'tours.newUserModal.title.welcome',
-    defaultMessage: 'Welcome to your',
-    description: 'The beginning of the phrase "Welcome to your edX course!"',
+    defaultMessage: 'Chào mừng bạn đến với',
+    description: 'Phần mở đầu của câu "Chào mừng bạn đến với khóa học edX của bạn!"',
   },
   skipForNow: {
     id: 'tours.button.skipForNow',
-    defaultMessage: 'Skip for now',
-    description: 'A button used to dismiss the modal and skip the optional tour of the website',
+    defaultMessage: 'Bỏ qua ngay bây giờ',
+    description: 'Nút dùng để đóng modal và bỏ qua tour tùy chọn của website',
   },
 });
 

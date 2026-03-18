@@ -24,7 +24,7 @@ function getRandomFactoid(intl, streakLength) {
   const factoids = [
     (<FormattedMessage
       id="learning.streakcelebration.factoida"
-      defaultMessage="Users who learn {streak_length} days in a row {bolded_section} than those who don’t."
+      defaultMessage="Người dùng học {streak_length} ngày liên tiếp {bolded_section} nhiều hơn những người không học."
       values={{
         bolded_section: (<b>{boldedSectionA}</b>),
         streak_length: (streakLength),
@@ -32,7 +32,7 @@ function getRandomFactoid(intl, streakLength) {
     />),
     (<FormattedMessage
       id="learning.streakcelebration.factoidb"
-      defaultMessage="Users who learn {streak_length} days in a row {bolded_section} vs. those who don’t."
+      defaultMessage="Người dùng học {streak_length} ngày liên tiếp {bolded_section} so với những người không học."
       values={{
         bolded_section: (<b>{boldedSectionB}</b>),
         streak_length: (streakLength),
@@ -187,7 +187,7 @@ const StreakModal = ({
                 })}&nbsp;
                 <FormattedMessage
                   id="learning.streakCelebration.streakCelebrationCouponEndDateMessage"
-                  defaultMessage="Ends {date}."
+                  defaultMessage="Kết thúc vào {date}."
                   values={{
                     date: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleDateString({ timeZone: 'UTC' }),
                   }}
