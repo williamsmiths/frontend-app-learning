@@ -50,13 +50,11 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs, courseId }) => {
       window.currentCourseInfo = courseInfo;
       window.currentUserInfo = currentUserInfo;
       window.getJWTTokenFromCookie = getJWTTokenFromCookie;
-      window.handleCaseStudyClick = handleCaseStudyClick;
       console.log("🧪 Course data available in window:");
       console.log("- window.currentCourseId - Current course ID");
       console.log("- window.currentCourseInfo - Current course info");
       console.log("- window.currentUserInfo - Current user info");
       console.log("- window.getJWTTokenFromCookie() - Get JWT token from cookie");
-      console.log("- window.handleCaseStudyClick() - Test CaseStudy SSO");
     }
   }, [courseId, courseInfo, currentUserInfo]);
 
