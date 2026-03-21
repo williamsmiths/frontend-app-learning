@@ -61,79 +61,79 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs, courseId }) => {
   }, [courseId, courseInfo, currentUserInfo]);
 
   // Xử lý click vào CaseStudy link
-  const handleCaseStudyClick = (e) => {
-    e.preventDefault();
+  // const handleCaseStudyClick = (e) => {
+  //   e.preventDefault();
 
-    try {
-      console.log("=== CASESTUDY SSO AUTHENTICATION ===");
+  //   try {
+  //     console.log("=== CASESTUDY SSO AUTHENTICATION ===");
 
-      // Lấy JWT token từ cookie
-      const jwtToken = getJWTTokenFromCookie();
+  //     // Lấy JWT token từ cookie
+  //     const jwtToken = getJWTTokenFromCookie();
 
-      if (jwtToken) {
-        // Tạo URL SSO với token
-        const ssoUrl = `https://caseuniverse.duytan.edu.vn/sso/callback?token=${jwtToken}`;
+  //     if (jwtToken) {
+  //       // Tạo URL SSO với token
+  //       const ssoUrl = `https://caseuniverse.duytan.edu.vn/sso/callback?token=${jwtToken}`;
 
-        console.log("🚀 Opening CaseStudy with SSO:", ssoUrl);
-        console.log("🔑 Token length:", jwtToken.length);
+  //       console.log("🚀 Opening CaseStudy with SSO:", ssoUrl);
+  //       console.log("🔑 Token length:", jwtToken.length);
 
-        // Mở CaseStudy trong tab mới với SSO
-        window.open(ssoUrl, "_blank", "noopener,noreferrer");
-      } else {
-        // Fallback: mở CaseStudy mà không có SSO
-        const fallbackUrl = "https://caseuniverse.duytan.edu.vn";
-        console.log("🏠 Fallback: Opening CaseStudy without SSO:", fallbackUrl);
-        window.open(fallbackUrl, "_blank", "noopener,noreferrer");
-      }
+  //       // Mở CaseStudy trong tab mới với SSO
+  //       window.open(ssoUrl, "_blank", "noopener,noreferrer");
+  //     } else {
+  //       // Fallback: mở CaseStudy mà không có SSO
+  //       const fallbackUrl = "https://caseuniverse.duytan.edu.vn";
+  //       console.log("🏠 Fallback: Opening CaseStudy without SSO:", fallbackUrl);
+  //       window.open(fallbackUrl, "_blank", "noopener,noreferrer");
+  //     }
 
-      console.log("=== CASESTUDY SSO COMPLETED ===");
-    } catch (error) {
-      console.error("❌ Error in CaseStudy SSO:", error);
-      // Fallback nếu có lỗi
-      window.open("https://caseuniverse.duytan.edu.vn", "_blank", "noopener,noreferrer");
-    }
-  };
+  //     console.log("=== CASESTUDY SSO COMPLETED ===");
+  //   } catch (error) {
+  //     console.error("❌ Error in CaseStudy SSO:", error);
+  //     // Fallback nếu có lỗi
+  //     window.open("https://caseuniverse.duytan.edu.vn", "_blank", "noopener,noreferrer");
+  //   }
+  // };
 
   // Xử lý click vào Meeting link
-  const handleMeetingClick = async (e) => {
-    e.preventDefault();
-    setIsLoadingJitsiToken(true);
+  // const handleMeetingClick = async (e) => {
+  //   e.preventDefault();
+  //   setIsLoadingJitsiToken(true);
 
-    try {
-      console.log("=== CREATING JITSI TOKEN ===");
+  //   try {
+  //     console.log("=== CREATING JITSI TOKEN ===");
 
-      const userInfo = getUserInfo();
-      const courseData = {
-        courseId: courseId,
-        title: courseInfo.title || "Unknown Course",
-        org: courseInfo.org || "Unknown Org",
-      };
+  //     const userInfo = getUserInfo();
+  //     const courseData = {
+  //       courseId: courseId,
+  //       title: courseInfo.title || "Unknown Course",
+  //       org: courseInfo.org || "Unknown Org",
+  //     };
 
-      console.log("User Info:", userInfo);
-      console.log("Course Data for token:", courseData);
+  //     console.log("User Info:", userInfo);
+  //     console.log("Course Data for token:", courseData);
 
-      // Tạo token Jitsi
-      const token = await createJitsiToken(courseData, userInfo);
-      console.log("Generated Jitsi Token:", token);
+  //     // Tạo token Jitsi
+  //     const token = await createJitsiToken(courseData, userInfo);
+  //     console.log("Generated Jitsi Token:", token);
 
-      console.log("============================");
-      // Tạo URL với token
-      const meetingUrl = createJitsiMeetingUrl(courseId, token);
+  //     console.log("============================");
+  //     // Tạo URL với token
+  //     const meetingUrl = createJitsiMeetingUrl(courseId, token);
 
-      console.log("Generated Meeting URL:", meetingUrl);
-      console.log("============================");
+  //     console.log("Generated Meeting URL:", meetingUrl);
+  //     console.log("============================");
 
-      // Mở meeting trong tab mới
-      window.open(meetingUrl, "_blank", "noopener,noreferrer");
-    } catch (error) {
-      console.error("Error handling meeting click:", error);
-      // Fallback: mở meeting không có token
-      const fallbackUrl = createJitsiMeetingUrl(courseId, null);
-      window.open(fallbackUrl, "_blank", "noopener,noreferrer");
-    } finally {
-      setIsLoadingJitsiToken(false);
-    }
-  };
+  //     // Mở meeting trong tab mới
+  //     window.open(meetingUrl, "_blank", "noopener,noreferrer");
+  //   } catch (error) {
+  //     console.error("Error handling meeting click:", error);
+  //     // Fallback: mở meeting không có token
+  //     const fallbackUrl = createJitsiMeetingUrl(courseId, null);
+  //     window.open(fallbackUrl, "_blank", "noopener,noreferrer");
+  //   } finally {
+  //     setIsLoadingJitsiToken(false);
+  //   }
+  // };
 
   // Add custom styles for hover effects
   const customStyles = `
@@ -166,7 +166,7 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs, courseId }) => {
                   {title}
                 </a>
               ))}
-              <a
+              {/* <a
                 className={classNames("nav-item flex-shrink-0 nav-link")}
                 href="#"
                 onClick={handleCaseStudyClick}
@@ -223,7 +223,7 @@ const CourseTabsNavigation = ({ activeTabSlug, className, tabs, courseId }) => {
                   />
                 </svg>
                 {isLoadingJitsiToken ? "Creating Meeting..." : "Meeting"}
-              </a>
+              </a> */}
             </Tabs>
           </div>
           <div className="search-toggle">
